@@ -10,884 +10,1536 @@
 <meta property="og:description" content="関東エリアでベビーシッター募集中。未経験OK、時給1,500〜2,000円。自由な働き方で子育て家庭をサポート。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://babysitter.bebi-mama.jp/">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://babysitter.bebi-mama.jp/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Noto Sans JP', sans-serif; color: #333; line-height: 1.8; background: #fff; }
-img { max-width: 100%; height: auto; }
-a { color: inherit; text-decoration: none; }
-
-/* ===== Header ===== */
-.header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,0.97); box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between;
-}
-.header-logo { font-size: 20px; font-weight: 800; color: #e85b8a; letter-spacing: -0.5px; }
-.header-logo span { color: #ff9eb5; }
-.header-nav { display: flex; gap: 16px; align-items: center; }
-.header-nav a { font-size: 13px; font-weight: 600; color: #555; }
-.header-cta {
-  background: linear-gradient(135deg, #ff6b9d, #e85b8a);
-  color: #fff; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700;
-  box-shadow: 0 2px 8px rgba(232,91,138,0.3); transition: all 0.3s;
-}
-.header-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(232,91,138,0.4); }
-
-/* ===== Hero ===== */
-.hero {
-  margin-top: 64px; position: relative; overflow: hidden;
-  background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 30%, #ffd6e7 60%, #ffb8d4 100%);
-  padding: 60px 24px 50px; min-height: 560px;
-}
-.hero-inner { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
-.hero-badge {
-  display: inline-block; background: #e85b8a; color: #fff; font-size: 13px; font-weight: 700;
-  padding: 4px 16px; border-radius: 50px; margin-bottom: 16px;
-}
-.hero h1 {
-  font-size: 34px; font-weight: 900; line-height: 1.5; color: #333; margin-bottom: 20px;
-}
-.hero h1 .accent { color: #e85b8a; }
-.hero-sub { font-size: 16px; color: #555; margin-bottom: 30px; line-height: 1.9; }
-.hero-points { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
-.hero-point {
-  background: #fff; border: 2px solid #e85b8a; border-radius: 50px; padding: 8px 18px;
-  font-size: 13px; font-weight: 700; color: #e85b8a; box-shadow: 0 2px 8px rgba(232,91,138,0.12);
-}
-.hero-cta-wrap { text-align: left; }
-.btn-primary {
-  display: inline-block; background: linear-gradient(135deg, #ff6b9d, #e85b8a);
-  color: #fff; font-size: 18px; font-weight: 800; padding: 18px 48px; border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(232,91,138,0.35); transition: all 0.3s; border: none; cursor: pointer;
-  text-align: center; letter-spacing: 0.5px;
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(232,91,138,0.5); }
-.btn-primary-large { font-size: 20px; padding: 20px 56px; }
-.hero-bubbles {
-  position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
-  display: flex; align-items: center; justify-content: center; pointer-events: none;
-}
-.hero-illustration {
-  width: 100%; max-width: 380px; aspect-ratio: 1; border-radius: 50%;
-  background: rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center;
-  font-size: 120px;
-}
-
-/* ===== Sections Common ===== */
-.section { padding: 70px 24px; }
-.section-alt { background: #fff5f8; }
-.section-gray { background: #f7f7f9; }
-.section-title {
-  text-align: center; font-size: 26px; font-weight: 800; color: #333; margin-bottom: 12px;
-}
-.section-title .accent { color: #e85b8a; }
-.section-subtitle {
-  text-align: center; font-size: 14px; color: #888; margin-bottom: 48px;
-}
-.container { max-width: 1000px; margin: 0 auto; }
-
-/* ===== Merits ===== */
-.merits-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
-.merit-card {
-  background: #fff; border-radius: 16px; padding: 32px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  display: flex; gap: 24px; align-items: flex-start; transition: transform 0.3s;
-}
-.merit-card:hover { transform: translateY(-4px); }
-.merit-num {
-  flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
-  background: linear-gradient(135deg, #ff6b9d, #e85b8a);
-  color: #fff; display: flex; align-items: center; justify-content: center;
-  font-size: 22px; font-weight: 900;
-}
-.merit-body h3 { font-size: 18px; font-weight: 800; color: #333; margin-bottom: 8px; line-height: 1.5; }
-.merit-body h3 .accent { color: #e85b8a; }
-.merit-body p { font-size: 14px; color: #666; line-height: 1.8; }
-.merit-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.merit-tag {
-  background: #fff0f5; color: #e85b8a; font-size: 12px; font-weight: 700;
-  padding: 4px 12px; border-radius: 50px;
-}
-
-/* ===== Income ===== */
-.income-section { background: linear-gradient(135deg, #e85b8a, #c94070); padding: 60px 24px; }
-.income-section .section-title { color: #fff; }
-.income-section .section-subtitle { color: rgba(255,255,255,0.8); }
-.income-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto 32px; }
-.income-card {
-  background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 16px;
-  padding: 28px 20px; text-align: center; border: 1px solid rgba(255,255,255,0.2);
-}
-.income-card .label { font-size: 13px; color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 8px; }
-.income-card .amount { font-size: 36px; font-weight: 900; color: #fff; }
-.income-card .amount small { font-size: 16px; }
-.income-card .sub { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
-.income-note { text-align: center; font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 8px; }
-
-/* ===== Lifestyle ===== */
-.lifestyle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
-.lifestyle-card {
-  background: #fff; border-radius: 14px; padding: 24px 16px; text-align: center;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.06); border: 2px solid transparent;
-  transition: all 0.3s; cursor: default;
-}
-.lifestyle-card:hover { border-color: #e85b8a; }
-.lifestyle-icon { font-size: 40px; margin-bottom: 12px; }
-.lifestyle-card h4 { font-size: 14px; font-weight: 700; color: #333; margin-bottom: 6px; }
-.lifestyle-card p { font-size: 12px; color: #888; }
-
-/* ===== Testimonials ===== */
-.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.testimonial-card {
-  background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-}
-.testimonial-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-.testimonial-avatar {
-  width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #ffb8d4, #e85b8a);
-  display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; flex-shrink: 0;
-}
-.testimonial-name { font-size: 15px; font-weight: 700; color: #333; }
-.testimonial-role { font-size: 12px; color: #888; }
-.testimonial-text { font-size: 14px; color: #555; line-height: 1.9; position: relative; padding-left: 20px; }
-.testimonial-text::before { content: '"'; position: absolute; left: 0; top: -4px; font-size: 28px; color: #e85b8a; font-weight: 900; }
-
-/* ===== Reviews ===== */
-.reviews-scroll { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 16px; scroll-snap-type: x mandatory; }
-.reviews-scroll::-webkit-scrollbar { height: 6px; }
-.reviews-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
-.review-card {
-  flex: 0 0 280px; background: #fff; border-radius: 14px; padding: 24px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.06); scroll-snap-align: start;
-}
-.review-stars { color: #ffc107; font-size: 16px; margin-bottom: 8px; letter-spacing: 2px; }
-.review-age { font-size: 12px; color: #e85b8a; font-weight: 700; margin-bottom: 10px; }
-.review-text { font-size: 13px; color: #555; line-height: 1.8; }
-
-/* ===== Safety ===== */
-.safety-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.safety-card {
-  text-align: center; background: #fff; border-radius: 16px; padding: 32px 20px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-}
-.safety-icon { font-size: 48px; margin-bottom: 16px; }
-.safety-card h4 { font-size: 15px; font-weight: 700; color: #333; margin-bottom: 8px; line-height: 1.5; }
-.safety-card p { font-size: 13px; color: #666; line-height: 1.7; }
-
-/* ===== Flow ===== */
-.flow-steps { display: flex; flex-direction: column; gap: 0; max-width: 700px; margin: 0 auto; }
-.flow-step {
-  display: flex; gap: 20px; align-items: flex-start; position: relative; padding-bottom: 32px;
-}
-.flow-step:last-child { padding-bottom: 0; }
-.flow-step::before {
-  content: ''; position: absolute; left: 27px; top: 56px; bottom: 0; width: 2px;
-  background: linear-gradient(to bottom, #e85b8a, #ffb8d4);
-}
-.flow-step:last-child::before { display: none; }
-.flow-num {
-  flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
-  background: linear-gradient(135deg, #ff6b9d, #e85b8a);
-  color: #fff; display: flex; align-items: center; justify-content: center;
-  font-size: 20px; font-weight: 900; position: relative; z-index: 1;
-}
-.flow-content h4 { font-size: 17px; font-weight: 700; color: #333; margin-bottom: 6px; }
-.flow-content p { font-size: 14px; color: #666; line-height: 1.8; }
-
-/* ===== FAQ ===== */
-.faq-list { max-width: 760px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid #eee; }
-.faq-question {
-  padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between;
-  align-items: center; font-size: 15px; font-weight: 700; color: #333;
-  list-style: none; user-select: none;
-}
-.faq-question::marker { display: none; }
-.faq-question .q-label { color: #e85b8a; font-weight: 800; margin-right: 10px; }
-.faq-arrow { transition: transform 0.3s; font-size: 12px; color: #999; flex-shrink: 0; }
-.faq-item.open .faq-arrow { transform: rotate(180deg); }
-.faq-answer {
-  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
-  font-size: 14px; color: #666; line-height: 1.9; padding: 0 0 0 28px;
-}
-.faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
-
-/* ===== Stats ===== */
-.stats-section {
-  background: linear-gradient(135deg, #fff5f8, #ffe8f0);
-  padding: 60px 24px; text-align: center;
-}
-.stats-big { font-size: 72px; font-weight: 900; color: #e85b8a; line-height: 1; }
-.stats-big small { font-size: 24px; }
-.stats-label { font-size: 18px; font-weight: 700; color: #333; margin-top: 8px; margin-bottom: 16px; }
-.stats-desc { font-size: 14px; color: #666; max-width: 600px; margin: 0 auto; line-height: 1.9; }
-
-/* ===== Requirements ===== */
-.req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 800px; margin: 0 auto; }
-.req-box { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
-.req-box h4 { font-size: 16px; font-weight: 800; color: #e85b8a; margin-bottom: 16px; border-bottom: 2px solid #ffe8f0; padding-bottom: 12px; }
-.req-box ul { list-style: none; }
-.req-box li { font-size: 14px; color: #555; padding: 6px 0 6px 24px; position: relative; line-height: 1.7; }
-.req-box li::before { content: '✓'; position: absolute; left: 0; color: #e85b8a; font-weight: 700; }
-
-/* ===== CTA Section ===== */
-.cta-section {
-  background: linear-gradient(135deg, #e85b8a, #c94070);
-  padding: 60px 24px; text-align: center;
-}
-.cta-section h2 { color: #fff; font-size: 26px; font-weight: 800; margin-bottom: 12px; }
-.cta-section p { color: rgba(255,255,255,0.9); font-size: 15px; margin-bottom: 28px; }
-.btn-white {
-  display: inline-block; background: #fff; color: #e85b8a; font-size: 20px; font-weight: 800;
-  padding: 20px 56px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  transition: all 0.3s; border: none; cursor: pointer;
-}
-.btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(0,0,0,0.2); }
-
-/* ===== Area ===== */
-.area-tags { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
-.area-tag {
-  background: #fff; border: 2px solid #e85b8a; color: #e85b8a; font-size: 14px; font-weight: 700;
-  padding: 10px 24px; border-radius: 50px;
-}
-
-/* ===== Footer ===== */
-.footer { background: #2d2d3d; color: #aaa; padding: 40px 24px; text-align: center; }
-.footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-.footer-links a { font-size: 13px; color: #aaa; transition: color 0.3s; }
-.footer-links a:hover { color: #fff; }
-.footer-copy { font-size: 12px; color: #666; }
-
-/* ===== Mid CTA Banner ===== */
-.mid-cta {
-  background: linear-gradient(135deg, #fff0f5, #ffe0ec);
-  padding: 40px 24px; text-align: center;
-}
-.mid-cta p { font-size: 15px; color: #555; margin-bottom: 20px; font-weight: 600; }
-
-/* ===== Floating CTA (mobile) ===== */
-.floating-cta {
-  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
-  background: rgba(255,255,255,0.97); padding: 12px 16px; box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
-  text-align: center;
-}
-.floating-cta .btn-primary { width: 100%; padding: 14px; font-size: 16px; }
-
-/* ===== SEO Hidden Headings ===== */
-.seo-heading { position: absolute; left: -9999px; }
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 24px; }
-  .hero-bubbles { display: none; }
-  .hero { padding: 40px 20px 36px; min-height: auto; }
-  .hero-points { gap: 8px; }
-  .hero-point { font-size: 12px; padding: 6px 14px; }
-  .section { padding: 50px 20px; }
-  .section-title { font-size: 22px; }
-  .income-grid { grid-template-columns: 1fr; max-width: 300px; }
-  .lifestyle-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .safety-grid { grid-template-columns: repeat(2, 1fr); }
-  .req-grid { grid-template-columns: 1fr; }
-  .header-nav a:not(.header-cta) { display: none; }
-  .floating-cta { display: block; }
-  .btn-primary-large { font-size: 17px; padding: 16px 36px; }
-  .stats-big { font-size: 56px; }
-  .merit-card { flex-direction: column; align-items: center; text-align: center; }
-  .merit-tags { justify-content: center; }
-}
-@media (max-width: 480px) {
-  .hero h1 { font-size: 21px; }
-  .lifestyle-grid { grid-template-columns: 1fr; }
-  .safety-grid { grid-template-columns: 1fr; }
-  .income-card .amount { font-size: 28px; }
-}
-</style>
-</head>
-<body>
-
-<!-- SEO Hidden Headings for crawlers -->
-<h2 class="seo-heading">関東エリア（東京都・埼玉県・千葉県・神奈川県）のベビーシッター求人情報</h2>
-
-<!-- ===== Header ===== -->
-<header class="header">
-  <a href="https://www.bebi-mama.jp/" class="header-logo">ベビ<span>♡</span>ママ</a>
-  <nav class="header-nav">
-    <a href="https://www.bebi-mama.jp/">トップページ</a>
-    <a href="#faq">よくある質問</a>
-    <a href="#apply" class="header-cta">今すぐ応募する</a>
-  </nav>
-</header>
-
-<!-- ===== Hero ===== -->
-<section class="hero" id="top">
-  <div class="hero-inner">
-    <span class="hero-badge">関東エリアで募集中！</span>
-    <h1>
-      <span class="accent">「子どもが好き！」</span>を活かして<br>
-      子育て家庭のサポートを<br>
-      <span class="accent">お仕事</span>にしませんか？
-    </h1>
-    <p class="hero-sub">
-      東京都・埼玉県・千葉県・神奈川県を中心に、<br>
-      あなたのライフスタイルに合わせた働き方ができます。
-    </p>
-    <div class="hero-points">
-      <span class="hero-point">未経験・資格なしOK</span>
-      <span class="hero-point">時給1,500〜2,000円</span>
-      <span class="hero-point">週1〜フルタイムまで</span>
-      <span class="hero-point">仲介手数料わずか5%</span>
-    </div>
-    <div class="hero-cta-wrap">
-      <a href="#apply" class="btn-primary btn-primary-large">今すぐベビーシッターを始める！</a>
-    </div>
-  </div>
-  <div class="hero-bubbles" aria-hidden="true">
-    <div class="hero-illustration">👶</div>
-  </div>
-</section>
-
-<!-- ===== 5 Merits ===== -->
-<section class="section" id="merits">
-  <div class="container">
-    <p class="section-subtitle">ベビ♡ママで働く</p>
-    <h2 class="section-title"><span class="accent">5つ</span>のメリット</h2>
-    <p class="section-subtitle">関東エリアのベビーシッター求人ならベビ♡ママ</p>
-    <div class="merits-grid">
-
-      <div class="merit-card">
-        <div class="merit-num">1</div>
-        <div class="merit-body">
-          <h3>未経験でも安心！<span class="accent">"はじめて"</span>のお仕事を応援</h3>
-          <p>資格なし・未経験の方も大歓迎。初回研修（約1.5時間）でマナー、セキュリティ、コミュニケーションなどをしっかり学べます。保育士・看護師・幼稚園教諭などの有資格者はもちろん、育児経験を活かして働く方も多数活躍中です。</p>
-          <div class="merit-tags">
-            <span class="merit-tag">研修充実</span>
-            <span class="merit-tag">資格なしOK</span>
-            <span class="merit-tag">育児経験歓迎</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="merit-card">
-        <div class="merit-num">2</div>
-        <div class="merit-body">
-          <h3>月収<span class="accent">40万円以上</span>も可能！しっかり稼げる</h3>
-          <p>時給1,500〜2,000円を自分で自由に設定可能。仲介手数料はわずか5%で手取りが多いのが特徴です。月5回で5万円、Wワークで10万円以上、フルタイムなら月収40万円以上も目指せます。交通費は別途支給されます。</p>
-          <div class="merit-tags">
-            <span class="merit-tag">時給自由設定</span>
-            <span class="merit-tag">手数料5%</span>
-            <span class="merit-tag">交通費別途</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="merit-card">
-        <div class="merit-num">3</div>
-        <div class="merit-body">
-          <h3>時間と場所は<span class="accent">自分で選べる</span>から続けられる！</h3>
-          <p>「家事の合間に働きたい」「保育園とのWワークがしたい」「空いた時間に自宅の近くで」。それぞれのスタイルに合わせて勤務可能。シッティング時間は最短15分から最長15時間まで対応。週1でも、フルタイムでも自由に選べます。</p>
-          <div class="merit-tags">
-            <span class="merit-tag">週1からOK</span>
-            <span class="merit-tag">シフト自由</span>
-            <span class="merit-tag">最短15分〜</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="merit-card">
-        <div class="merit-num">4</div>
-        <div class="merit-body">
-          <h3>トラブル時は<span class="accent">運営が対応</span>！安心して働ける</h3>
-          <p>保護者側も審査制で安心。万が一のトラブルの際もベビーシッターが直接対応する必要はありません。対人・対物賠償共通1事故5億円の賠償責任保険に加入済みで、のびのびと働いていただけるようサポートしています。</p>
-          <div class="merit-tags">
-            <span class="merit-tag">保険加入済み</span>
-            <span class="merit-tag">運営サポート</span>
-            <span class="merit-tag">審査制で安心</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="merit-card">
-        <div class="merit-num">5</div>
-        <div class="merit-body">
-          <h3>業界を熟知した<span class="accent">現役シッター</span>が運営！</h3>
-          <p>シッター業界2,000件以上の実務経験を持つ現役ベビーシッターが企画・運営。派遣型とマッチング型の両方の経験を活かし、透明性と安心・安全を重視したプラットフォームです。定期的なスキルアップ研修も実施しています。</p>
-          <div class="merit-tags">
-            <span class="merit-tag">現役シッター運営</span>
-            <span class="merit-tag">透明性重視</span>
-            <span class="merit-tag">スキルアップ研修</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== Income Section ===== -->
-<section class="income-section">
-  <div class="container">
-    <h2 class="section-title">あなたの働き方で<br>しっかり収入</h2>
-    <p class="section-subtitle">時給は1,500〜2,000円で自由に設定。仲介手数料はわずか5%！</p>
-    <div class="income-grid">
-      <div class="income-card">
-        <p class="label">月5回の場合</p>
-        <p class="amount">5<small>万円〜</small></p>
-        <p class="sub">スキマ時間で</p>
-      </div>
-      <div class="income-card">
-        <p class="label">Wワークの場合</p>
-        <p class="amount">10<small>万円以上</small></p>
-        <p class="sub">副業として</p>
-      </div>
-      <div class="income-card">
-        <p class="label">フルタイムの場合</p>
-        <p class="amount">40<small>万円以上</small></p>
-        <p class="sub">しっかり稼ぐ</p>
-      </div>
-    </div>
-    <p class="income-note">※ 交通費は一律1,000円＋交通移動費500円が別途支給されます</p>
-    <div style="text-align: center; margin-top: 28px;">
-      <a href="#apply" class="btn-white">今すぐベビーシッターを始める！</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Lifestyle ===== -->
-<section class="section" id="lifestyle">
-  <div class="container">
-    <h2 class="section-title">ライフスタイルに合わせた<br><span class="accent">さまざまな働き方</span></h2>
-    <p class="section-subtitle">東京都・埼玉県・千葉県・神奈川県の関東エリアで、あなたに合った働き方を</p>
-    <div class="lifestyle-grid">
-      <div class="lifestyle-card">
-        <div class="lifestyle-icon">💼</div>
-        <h4>週5でがっつり</h4>
-        <p>フルタイムで月収40万円以上を目指す</p>
-      </div>
-      <div class="lifestyle-card">
-        <div class="lifestyle-icon">📅</div>
-        <h4>週3以上で安定</h4>
-        <p>安定した収入を確保しながら自分の時間も</p>
-      </div>
-      <div class="lifestyle-card">
-        <div class="lifestyle-icon">🔄</div>
-        <h4>Wワークで両立</h4>
-        <p>本業と両立して無理なく収入アップ</p>
-      </div>
-      <div class="lifestyle-card">
-        <div class="lifestyle-icon">⏰</div>
-        <h4>スキマ時間に</h4>
-        <p>家事や育児の合間に自分のペースで</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Mid CTA ===== -->
-<div class="mid-cta">
-  <p>あなたの「子どもが好き」という気持ちを、お仕事にしませんか？</p>
-  <a href="#apply" class="btn-primary">今すぐベビーシッターを始める！</a>
-</div>
-
-<!-- ===== Testimonials ===== -->
-<section class="section section-alt" id="testimonials">
-  <div class="container">
-    <h2 class="section-title">先輩シッターの<span class="accent">体験談</span></h2>
-    <p class="section-subtitle">ベビ♡ママで活躍するシッターの声をご紹介</p>
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">👩</div>
-          <div>
-            <p class="testimonial-name">Aさん（40代・育児経験あり）</p>
-            <p class="testimonial-role">未経験からスタート → 現在週3勤務</p>
-          </div>
-        </div>
-        <p class="testimonial-text">育児経験を活かしたいと思い、ベビーシッターを始めました。研修がしっかりしていて、初めてでも安心してスタートできました。お母様に「助かりました！」と言ってもらえた時は、本当にやりがいを感じます。</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">👩‍⚕️</div>
-          <div>
-            <p class="testimonial-name">Bさん（30代・保育士資格あり）</p>
-            <p class="testimonial-role">保育園勤務 → ベビーシッターへ転身</p>
-          </div>
-        </div>
-        <p class="testimonial-text">一対一で子どもと関わるシッターは、保育園とは違った魅力があります。困っている家庭のために保育ができ、感謝されることが嬉しいです。私も一緒に楽しむことで、お子様ももっと楽しめると思っています。</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">👩‍🦳</div>
-          <div>
-            <p class="testimonial-name">Cさん（50代・第二の人生として）</p>
-            <p class="testimonial-role">子育て経験 → シッターデビュー</p>
-          </div>
-        </div>
-        <p class="testimonial-text">子育てを終えて第二の人生を模索する中、ベビーシッターになりました。お子様を無事にお返しできた時の笑顔に毎回感動します。子どもたちを喜ばせるお仕事ができて、とても充実しています。</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">👩‍🏫</div>
-          <div>
-            <p class="testimonial-name">Dさん（20代・Wワーク中）</p>
-            <p class="testimonial-role">本業と両立しながら活躍中</p>
-          </div>
-        </div>
-        <p class="testimonial-text">保育園勤務で「子どもとしっかり向き合えているかな」と感じていました。シッターなら一人ひとりとじっくり関われます。子どもだけでなくご両親も笑顔にできるこのお仕事にやりがいを感じています。</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== Reviews ===== -->
-<section class="section" id="reviews">
-  <div class="container">
-    <h2 class="section-title">ご利用<span class="accent">保護者さま</span>の声</h2>
-    <p class="section-subtitle">ベビ♡ママのシッターへの感謝の声をご紹介</p>
-    <div class="reviews-scroll">
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-age">6歳・9歳のお子様の保護者</p>
-        <p class="review-text">息子がとても楽しそうに帰って来て、親としてはお預けしてよかった！と嬉しかったです。</p>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-age">4歳のお子様の保護者</p>
-        <p class="review-text">外遊びが得意なシッターさんが来られてウキウキでした！食が細い息子が珍しくお昼をたくさん食べ、念願の完全燃焼な1日を過ごせたようです。</p>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-age">5歳のお子様の保護者</p>
-        <p class="review-text">娘も大変なついており、シッターさんが来られる日はカレンダーにハートのシールを貼って楽しみにしています。</p>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-age">1歳のお子様の保護者</p>
-        <p class="review-text">息子のペースに合わせて遊んでくださりました。おもちゃを持参してくださり、使ったことのないおもちゃへの反応も知ることができよい機会でした。</p>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-age">0歳のお子様の保護者</p>
-        <p class="review-text">初めて利用するので緊張していましたが、明るく話しかけて下さり緊張がほぐれました。人見知りの子供も懐いていました。</p>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-age">3歳のお子様の保護者</p>
-        <p class="review-text">先生が来られた時からすでに嬉しそうな息子。先生が帰られてからも「先生いつ来る？」とずっと言っておりました。</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== Safety ===== -->
-<section class="section section-gray" id="safety">
-  <div class="container">
-    <h2 class="section-title">ベビ♡ママの<span class="accent">4つの安心</span></h2>
-    <p class="section-subtitle">はじめてのベビーシッターでも安心して働けます</p>
-    <div class="safety-grid">
-      <div class="safety-card">
-        <div class="safety-icon">📋</div>
-        <h4>経験に合わせて<br>対応内容を相談可能</h4>
-        <p>個別保育、送迎、病児保育、簡単な家事など、あなたのスキルに合わせたお仕事ができます。</p>
-      </div>
-      <div class="safety-card">
-        <div class="safety-icon">🛡️</div>
-        <h4>トラブルは<br>運営が対応！</h4>
-        <p>対人・対物賠償共通1事故5億円の賠償責任保険加入。万が一の際も運営がサポートします。</p>
-      </div>
-      <div class="safety-card">
-        <div class="safety-icon">💬</div>
-        <h4>困った時は<br>サポートに相談</h4>
-        <p>業界経験豊富な運営スタッフがあなたのお仕事をバックアップ。いつでも相談できます。</p>
-      </div>
-      <div class="safety-card">
-        <div class="safety-icon">✅</div>
-        <h4>身元確認・審査済み<br>の保護者のみ</h4>
-        <p>保護者側も身分証明書の提出が必要。審査済みの安心な環境で働けます。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Flow ===== -->
-<section class="section" id="flow">
-  <div class="container">
-    <h2 class="section-title">応募から<span class="accent">お仕事開始</span>まで</h2>
-    <p class="section-subtitle">たった3ステップで始められます</p>
-    <div class="flow-steps">
-      <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-content">
-          <h4>WEB会員登録（無料・最短3分）</h4>
-          <p>メールアドレスと基本情報を入力するだけ。スマートフォンからも簡単に登録できます。</p>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-content">
-          <h4>初回研修（約1.5時間）</h4>
-          <p>マナー、セキュリティ、コミュニケーションなどの基礎研修を受講。自治体への認可外保育施設設置届の提出もサポートします。</p>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-content">
-          <h4>お仕事スタート！</h4>
-          <p>本登録後、すぐにお仕事開始。スマートフォンの簡単操作で保護者様からの依頼を受けて、ご自宅にお伺いして保育を行います。対象年齢は0歳〜18歳未満です。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Mid CTA 2 ===== -->
-<div class="mid-cta">
-  <p>登録はたった3分。あなたも今日からベビーシッターデビュー！</p>
-  <a href="#apply" class="btn-primary">今すぐベビーシッターを始める！</a>
-</div>
-
-<!-- ===== FAQ ===== -->
-<section class="section section-gray" id="faq">
-  <div class="container">
-    <h2 class="section-title">よくある<span class="accent">質問</span></h2>
-    <p class="section-subtitle">ベビーシッターの求人に関するご質問</p>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          <span><span class="q-label">Q.</span>未経験・資格なしでも大丈夫ですか？</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-answer">安心してお仕事をしていただけるよう、初回研修（約1.5時間）をご用意しております。マナー、セキュリティ、コミュニケーションなどをしっかり学べますので、ご安心ください。お仕事開始後もサポート体制があります。</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          <span><span class="q-label">Q.</span>東京都・埼玉県・千葉県・神奈川県以外でも仕事はありますか？</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-answer">現在の主要対応エリアは東京都（特に八王子市）、千葉県（流山市・市川市）、神奈川県、埼玉県です。シッターのスケジュールとお近くの保護者様のご依頼が合う場合、お仕事をしていただけます。対応エリアは順次拡大中です。</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          <span><span class="q-label">Q.</span>時給はどのくらいですか？</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-answer">時給は1,500〜2,000円の範囲で、ご自身で自由に設定いただけます。仲介手数料はわずか5%と業界最低水準。交通費は一律1,000円＋交通移動費500円が別途支給されます。</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          <span><span class="q-label">Q.</span>どのような働き方ができますか？</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-answer">週1回のスキマ時間勤務から、週5フルタイムまで、ご自身の希望に合わせて自由に設定可能です。シッティング時間は最短15分〜最長15時間まで対応。シフトの強制はなく、ご自身の都合と希望のバランスで働いていただけます。</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          <span><span class="q-label">Q.</span>仲介手数料はいくらですか？</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-answer">シッター側の仲介手数料はわずか5%です（依頼者側は15%）。振込手数料は500円/回です。業界最低水準の手数料で、手取り額が多いのが特徴です。</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          <span><span class="q-label">Q.</span>保険はありますか？</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-answer">はい。登録シッター全員に賠償責任保険が適用されます。対人・対物賠償共通で1事故につき最大5億円、受託財物補償は1,000万円までの補償があります。安心して働いていただけます。</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== Stats ===== -->
-<section class="stats-section">
-  <div class="container">
-    <h2 class="section-title" style="margin-bottom: 32px;">先輩シッターに聞きました</h2>
-    <p class="stats-big">97<small>%</small></p>
-    <p class="stats-label">がベビーシッターになってよかったと回答！</p>
-    <p class="stats-desc">自分の希望する働き方で、お子様と向き合えるのがベビーシッターというお仕事の魅力です。そして、お子様を大切に育てながら働くママ＆パパを支える、なくてはならないお仕事でもあります。</p>
-  </div>
-</section>
-
-<!-- ===== Requirements ===== -->
-<section class="section" id="requirements">
-  <div class="container">
-    <h2 class="section-title">応募<span class="accent">条件</span></h2>
-    <p class="section-subtitle">関東エリアのベビーシッター求人</p>
-    <div class="req-grid">
-      <div class="req-box">
-        <h4>必須条件</h4>
-        <ul>
-          <li>満18歳以上で心身ともに健康な方</li>
-          <li>子どもが好きで子どもに関わるお仕事がしたい方</li>
-          <li>東京都・埼玉県・千葉県・神奈川県で勤務可能な方</li>
-        </ul>
-      </div>
-      <div class="req-box">
-        <h4>歓迎条件</h4>
-        <ul>
-          <li>保育士・看護師・幼稚園教諭などの有資格者</li>
-          <li>保育園・幼稚園での勤務経験がある方</li>
-          <li>育児経験のある方</li>
-          <li>英会話、ダンス、リトミック等の特殊スキルをお持ちの方</li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="max-width: 800px; margin: 32px auto 0;">
-      <div class="req-box">
-        <h4>対応可能なサービス</h4>
-        <ul>
-          <li>個別保育（0歳〜18歳未満）</li>
-          <li>送迎サービス</li>
-          <li>病児・病後児保育</li>
-          <li>障がい児保育</li>
-          <li>習い事の見守り・家庭教師</li>
-          <li>簡単な家事（掃除・洗濯・調理）</li>
-          <li>夜間・宿泊保育</li>
-          <li>最大3人まで同時保育可能</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Area Section ===== -->
-<section class="section section-alt">
-  <div class="container">
-    <h2 class="section-title">対応<span class="accent">エリア</span></h2>
-    <p class="section-subtitle">関東エリアでベビーシッターの求人を募集中</p>
-    <div class="area-tags">
-      <span class="area-tag">東京都</span>
-      <span class="area-tag">埼玉県</span>
-      <span class="area-tag">千葉県</span>
-      <span class="area-tag">神奈川県</span>
-    </div>
-    <p style="text-align: center; font-size: 14px; color: #666; margin-top: 20px; line-height: 1.8;">
-      主要対応エリア：東京都八王子市、千葉県流山市・市川市、神奈川県、埼玉県<br>
-      ※ 対応エリアは順次拡大中です
-    </p>
-    <p style="text-align: center; font-size: 13px; color: #888; margin-top: 12px;">
-      契約形態：業務委託 ｜ 報酬支払い：月末締め翌月末払い（銀行振込）
-    </p>
-  </div>
-</section>
-
-<!-- ===== Final CTA ===== -->
-<section class="cta-section" id="apply">
-  <div class="container">
-    <h2>さあ、あなたも<br>ベビーシッターを始めよう！</h2>
-    <p>関東エリア（東京都・埼玉県・千葉県・神奈川県）で募集中<br>無料登録は最短3分で完了します</p>
-    <a href="https://recruit.bebi-mama.jp/" class="btn-white" id="final-cta">今すぐベビーシッターを始める！</a>
-    <p style="color: rgba(255,255,255,0.7); font-size: 12px; margin-top: 16px;">
-      登録説明会場：東京都渋谷区神南1丁目11番4号 FPGリンクス神南 5階<br>
-      受付時間：9時〜18時 ｜ JR渋谷駅ハチ公口より徒歩3分
-    </p>
-  </div>
-</section>
-
-<!-- ===== Footer ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-links">
-      <a href="https://www.bebi-mama.jp/">トップページ</a>
-      <a href="https://recruit.bebi-mama.jp/">シッター募集</a>
-      <a href="https://www.bebi-mama.jp/">プライバシーポリシー</a>
-      <a href="https://www.bebi-mama.jp/">利用規約</a>
-    </div>
-    <p style="margin-bottom: 16px;">
-      <span style="font-size: 14px; color: #ccc;">ベビーシッター求人エリア：</span><br>
-      <span style="font-size: 12px;">東京都の求人 ｜ 埼玉県の求人 ｜ 千葉県の求人 ｜ 神奈川県の求人 ｜ 関東エリアの求人</span>
-    </p>
-    <p class="footer-copy">&copy; 2024 ベビ♡ママ All Rights Reserved.</p>
-  </div>
-</footer>
-
-<!-- ===== Floating CTA (mobile) ===== -->
-<div class="floating-cta">
-  <a href="#apply" class="btn-primary">今すぐベビーシッターを始める！</a>
-</div>
-
-<!-- ===== Structured Data (JSON-LD) ===== -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org/",
   "@type": "JobPosting",
-  "title": "ベビーシッター募集 - 関東エリア（東京都・埼玉県・千葉県・神奈川県）",
-  "description": "関東エリアでベビーシッターを募集中。未経験OK、時給1,500〜2,000円、週1からフルタイムまで自由な働き方が可能。",
-  "datePosted": "2024-01-01",
+  "title": "ベビーシッター（関東エリア）",
+  "description": "関東エリア（東京都・埼玉県・千葉県・神奈川県）でのベビーシッター求人。時給1,500〜2,000円、未経験OK、週1〜フルタイムまで自由な働き方。",
+  "datePosted": "2025-01-01",
+  "validThrough": "2026-12-31",
+  "employmentType": "CONTRACTOR",
   "hiringOrganization": {
     "@type": "Organization",
     "name": "ベビ♡ママ",
     "sameAs": "https://www.bebi-mama.jp/"
   },
   "jobLocation": [
-    {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "東京都", "addressCountry": "JP"}},
-    {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "埼玉県", "addressCountry": "JP"}},
-    {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "千葉県", "addressCountry": "JP"}},
-    {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "神奈川県", "addressCountry": "JP"}}
+    {"@type": "Place","address": {"@type": "PostalAddress","addressRegion": "東京都","addressCountry": "JP"}},
+    {"@type": "Place","address": {"@type": "PostalAddress","addressRegion": "埼玉県","addressCountry": "JP"}},
+    {"@type": "Place","address": {"@type": "PostalAddress","addressRegion": "千葉県","addressCountry": "JP"}},
+    {"@type": "Place","address": {"@type": "PostalAddress","addressRegion": "神奈川県","addressCountry": "JP"}}
   ],
   "baseSalary": {
     "@type": "MonetaryAmount",
     "currency": "JPY",
-    "value": {
-      "@type": "QuantitativeValue",
-      "minValue": 1500,
-      "maxValue": 2000,
-      "unitText": "HOUR"
-    }
-  },
-  "employmentType": "CONTRACTOR",
-  "jobLocationType": "TELECOMMUTE"
+    "value": {"@type": "QuantitativeValue","minValue": 1500,"maxValue": 2000,"unitText": "HOUR"}
+  }
 }
 </script>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-size: 16px;
+  color: #1e1e1e;
+  line-height: 1.8;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ===== HEADER ===== */
+.header {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fb922c;
+}
+.header-logo span {
+  color: #e24a66;
+  font-size: 14px;
+  display: block;
+  margin-top: -4px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header-nav a {
+  font-size: 14px;
+  color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.header-nav a .nav-icon {
+  font-size: 22px;
+}
+.header-nav .btn-header-cta {
+  background: linear-gradient(135deg, #e24a66 0%, #fb922c 100%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.3s;
+}
+.header-nav .btn-header-cta:hover { opacity: 0.85; }
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+  font-size: 13px;
+  color: #666;
+  padding: 8px 30px;
+  background: #fff;
+}
+.breadcrumb a { color: #3da1e7; }
+
+/* ===== HERO (KV) SECTION ===== */
+.hero {
+  width: 100%;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== RECRUIT BANNER (IMAGE) ===== */
+.recruit-banner {
+  width: 100%;
+  text-align: center;
+  background: #fff9f0;
+  padding: 0;
+}
+.recruit-banner img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== CTA BUTTON ===== */
+.cta-wrap {
+  padding: 30px 20px;
+  text-align: center;
+  background: #fff9f0;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(180deg, #fd5e63 0%, #e24a66 50%, #c7354d 100%);
+  color: #fff;
+  padding: 20px 60px 20px 30px;
+  border-radius: 60px;
+  font-size: 28px;
+  font-weight: 900;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(219, 59, 100, 0.4);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 700px;
+  width: 90%;
+  justify-content: center;
+  gap: 15px;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(219, 59, 100, 0.5);
+}
+.cta-btn .free-badge {
+  background: #fff;
+  color: #e24a66;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.cta-btn .cta-text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cta-btn .cta-sub-text {
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+.cta-btn .cta-main-text {
+  font-size: 28px;
+  font-weight: 900;
+}
+.cta-btn .cta-arrow {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+/* ===== SECTION NAV ===== */
+.section-nav {
+  padding: 60px 30px;
+  background: #fff;
+}
+.section-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.section-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.section-nav-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.section-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #fb922c, #f7a94b);
+  border-radius: 0 0 12px 12px;
+}
+.section-nav-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.section-nav-item .nav-label {
+  font-size: 14px;
+  color: #fb922c;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.section-nav-item .nav-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e24a66;
+  line-height: 1.4;
+}
+.section-nav-item .nav-arrow {
+  color: #fb922c;
+  font-size: 20px;
+  margin-top: 8px;
+}
+.section-nav-full {
+  margin-top: 20px;
+}
+.section-nav-full .section-nav-item {
+  grid-column: 1 / -1;
+}
+
+/* ===== LEAD SECTION ===== */
+.lead-section {
+  background: linear-gradient(180deg, #f5ece4 0%, #efe5d9 100%);
+  padding: 80px 30px;
+  text-align: center;
+  position: relative;
+}
+.lead-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c4b0' fill-opacity='0.08'%3E%3Cpath d='M30 10c2 0 4 2 4 4s-2 4-4 4-4-2-4-4 2-4 4-4zm-8 20a3 3 0 110 6 3 3 0 010-6zm16 0a3 3 0 110 6 3 3 0 010-6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  opacity: 0.5;
+}
+.lead-section > * { position: relative; z-index: 1; }
+.lead-section h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e1e1e;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+.lead-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #1e1e1e;
+  margin: 20px auto 0;
+}
+.lead-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+.lead-list li {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lead-list li .check-icon {
+  color: #e24a66;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.lead-list li .pink { color: #e24a66; font-weight: 700; }
+
+/* ===== MERIT SECTION ===== */
+.merit-section {
+  padding: 80px 30px;
+  background: #fff;
+}
+.merit-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-heading .heading-sub {
+  font-size: 16px;
+  color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.section-heading .heading-sub::before,
+.section-heading .heading-sub::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  background: #1e1e1e;
+}
+.section-heading .heading-sub::before { transform: rotate(-20deg); }
+.section-heading .heading-sub::after { transform: rotate(20deg); }
+.section-heading h2 {
+  font-size: 34px;
+  font-weight: 900;
+  color: #1e1e1e;
+  line-height: 1.5;
+}
+.section-heading .heading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+.section-heading .heading-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffe4a0;
+}
+
+/* ===== MERIT CARDS ===== */
+.merit-card {
+  border: 2px solid #f0c040;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.merit-card .point-badge {
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #fb922c 0%, #f7a94b 100%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(251,146,44,0.3);
+}
+.merit-card .point-badge .point-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.merit-card .point-badge .point-number {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: -2px;
+}
+.merit-card .merit-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e24a66;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+.merit-card .merit-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.merit-card .merit-photo {
+  flex: 0 0 280px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0e8e0, #e8e0d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+.merit-card .merit-points {
+  flex: 1;
+}
+.merit-card .merit-points li {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.merit-card .merit-points li .merit-check {
+  color: #fb922c;
+  font-size: 18px;
+}
+.merit-card .merit-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-top: 20px;
+  color: #333;
+}
+.merit-card .merit-desc .pink { color: #e24a66; font-weight: 700; }
+
+/* ===== INCOME IMAGE ===== */
+.income-image {
+  text-align: center;
+  margin: 30px 0;
+  padding: 30px;
+  background: linear-gradient(90deg, #fff0d0, #ffe8b0, #fff0d0);
+  border-radius: 16px;
+}
+.income-image .income-label {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 8px;
+}
+.income-image .income-range {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+.income-image .income-range .label { font-size: 18px; font-weight: 700; color: #fb922c; }
+.income-image .income-range .number { font-size: 72px; font-weight: 900; color: #fb922c; line-height: 1; }
+.income-image .income-range .separator { font-size: 28px; color: #fb922c; }
+.income-image .income-range .unit { font-size: 24px; font-weight: 700; color: #1e1e1e; }
+.income-note { font-size: 12px; color: #888; margin-top: 5px; }
+
+/* ===== LIFESTYLE (SENIOR SET) ===== */
+.lifestyle-section {
+  padding: 80px 30px;
+  background: #fff;
+}
+.lifestyle-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.lifestyle-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.lifestyle-card {
+  border: 2px solid #f0c040;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.lifestyle-card-photo {
+  height: 180px;
+  background: linear-gradient(135deg, #f0e8e0, #e8e0d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+.lifestyle-card-body {
+  padding: 20px;
+}
+.lifestyle-card-tag {
+  display: inline-block;
+  background: #fb922c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.lifestyle-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.lifestyle-card-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ===== VOICE / TESTIMONIALS ===== */
+.voice-section {
+  padding: 80px 30px;
+  background: #fff9f0;
+}
+.voice-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.voice-heading { text-align: center; margin-bottom: 10px; }
+.voice-heading h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 20px;
+}
+.voice-video-placeholder {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  height: 300px;
+  background: linear-gradient(135deg, #e8e0d8, #f0e8e0);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+.voice-note {
+  font-size: 12px;
+  color: #888;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+/* ===== REVIEWS CAROUSEL ===== */
+.reviews-section {
+  padding: 80px 30px;
+  background: #fff;
+}
+.reviews-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.reviews-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
+}
+.review-card {
+  flex: 0 0 280px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.review-stars {
+  color: #f7a94b;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.review-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+}
+.review-author {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ===== SAFETY (4つの安心) ===== */
+.safety-section {
+  padding: 80px 30px;
+  background: #fff;
+}
+.safety-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.safety-card {
+  text-align: center;
+  padding: 25px 15px;
+  background: #fefaf8;
+  border-radius: 12px;
+  border: 1px solid #f0e0d0;
+}
+.safety-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+.safety-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e24a66;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.safety-desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== FLOW ===== */
+.flow-section {
+  padding: 80px 30px;
+  background: #f4f4f4;
+}
+.flow-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.flow-steps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+.flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 15%;
+  right: 15%;
+  height: 3px;
+  background: #ddd;
+  z-index: 0;
+}
+.flow-step {
+  text-align: center;
+  flex: 0 0 160px;
+  position: relative;
+  z-index: 1;
+}
+.flow-step-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fb922c, #f7a94b);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 3px 10px rgba(251,146,44,0.3);
+}
+.flow-step-circle .step-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.flow-step-circle .step-number {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+.flow-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 8px;
+}
+.flow-step-desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===== FAQ ===== */
+.faq-section {
+  padding: 80px 30px;
+  background: #fff;
+}
+.faq-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+.faq-question {
+  padding: 20px 0;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1e1e1e;
+}
+.faq-question .q-icon {
+  color: #fb922c;
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.faq-question .toggle {
+  margin-left: auto;
+  font-size: 20px;
+  color: #fb922c;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-question .toggle {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.faq-answer-inner {
+  padding: 0 0 20px 32px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+}
+.faq-item.open .faq-answer {
+  max-height: 500px;
+}
+
+/* ===== STATS ===== */
+.stats-section {
+  padding: 60px 30px;
+  background: #fff9f0;
+  text-align: center;
+}
+.stats-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.stats-number {
+  font-size: 100px;
+  font-weight: 900;
+  color: #fb922c;
+  line-height: 1;
+}
+.stats-number .unit { font-size: 40px; }
+.stats-label {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-top: 10px;
+}
+.stats-desc {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* ===== REQUIREMENTS ===== */
+.req-section {
+  padding: 80px 30px;
+  background: #fff;
+}
+.req-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.req-box {
+  border: 2px solid #fb922c;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.req-box-header {
+  background: #fb922c;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.req-box-body {
+  padding: 25px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.req-box-body .pink { color: #e24a66; font-weight: 700; }
+
+/* ===== JOB AREA ===== */
+.area-section {
+  padding: 60px 30px;
+  background: #f4f4f4;
+}
+.area-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.area-heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.area-tag {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e1e1e;
+  border: 1px solid #ddd;
+  transition: background 0.2s;
+}
+.area-tag:hover { background: #fff9f0; border-color: #fb922c; }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 40px 30px;
+  text-align: center;
+}
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fb922c;
+  margin-bottom: 15px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.footer-links a {
+  font-size: 13px;
+  color: #ccc;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: #fb922c; }
+.footer-copy {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #3da1e7;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(61,161,231,0.4);
+  transition: transform 0.2s;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+}
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { transform: translateY(-3px); }
+
+/* ===== FLOATING CTA (Mobile) ===== */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  padding: 10px 15px;
+  box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
+  z-index: 98;
+  text-align: center;
+}
+.floating-cta .cta-btn {
+  font-size: 18px;
+  padding: 14px 30px;
+  width: 100%;
+  max-width: 400px;
+}
+.floating-cta .cta-btn .free-badge {
+  width: 44px;
+  height: 44px;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header { height: 60px; padding: 0 15px; }
+  .header-logo { font-size: 20px; }
+  .header-nav a .nav-text { display: none; }
+  .header-nav .btn-header-cta { padding: 8px 16px; font-size: 13px; }
+
+
+
+  .cta-btn { font-size: 20px; padding: 15px 20px; }
+  .cta-btn .free-badge { width: 46px; height: 46px; font-size: 15px; }
+  .cta-btn .cta-main-text { font-size: 20px; }
+
+  .section-nav-grid { grid-template-columns: 1fr; }
+
+  .lead-section { padding: 50px 20px; }
+  .lead-section h2 { font-size: 22px; }
+  .lead-list li { font-size: 16px; }
+
+  .merit-card { padding: 30px 20px; }
+  .merit-card .merit-title { font-size: 20px; }
+  .merit-card .merit-content { flex-direction: column; }
+  .merit-card .merit-photo { flex: none; width: 100%; height: 180px; }
+  .merit-card .merit-points li { font-size: 15px; }
+
+  .income-image .income-range .number { font-size: 48px; }
+
+  .lifestyle-cards { grid-template-columns: 1fr; }
+
+  .safety-grid { grid-template-columns: 1fr 1fr; }
+
+  .flow-steps { flex-wrap: wrap; }
+  .flow-steps::before { display: none; }
+  .flow-step { flex: 0 0 calc(50% - 10px); }
+
+  .stats-number { font-size: 72px; }
+
+  .floating-cta { display: block; }
+  .back-to-top { bottom: 80px; }
+
+  .section-heading h2 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <a href="https://www.bebi-mama.jp/" class="header-logo">
+    ベビ&#x2661;ママ
+    <span>ベビーシッターマッチング</span>
+  </a>
+  <nav class="header-nav">
+    <a href="https://www.bebi-mama.jp/">
+      <span class="nav-icon">&#x1F3E0;</span>
+      <span class="nav-text">トップページ</span>
+    </a>
+    <a href="https://www.bebi-mama.jp/contact">
+      <span class="nav-icon">&#x2709;</span>
+      <span class="nav-text">お問合せ</span>
+    </a>
+    <a href="#form" class="btn-header-cta">
+      <span>&#x1F4DD;</span>
+      今すぐベビーシッターを始める！
+    </a>
+  </nav>
+</header>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="breadcrumb">
+  <a href="https://www.bebi-mama.jp/">ベビーシッターならベビ&#x2661;ママ</a> &gt; <span>求人・採用情報</span>
+</nav>
+
+<!-- ===== HERO (KV) ===== -->
+<section class="hero">
+  <img src="site2_hero2.png" alt="あなたの時間を、誰かの笑顔につなげるお仕事 — 自分らしく働けるベビママで活躍しませんか？ 現役シッター運営で安心・資格研修済みシッターのみ登録・サポート＆保険完備で安心">
+</section>
+
+<!-- ===== RECRUIT BANNER ===== -->
+<section class="recruit-banner">
+  <img src="section2_sitter_recruit.png" alt="新人シッターさん大募集！週1〜フルタイムまで選べる・保育資格なしでもOK・実質時給2,000円〜も可・当日空いている時間でも働ける">
+</section>
+
+<!-- ===== CTA BUTTON ===== -->
+<div class="cta-wrap">
+  <a href="#form" class="cta-btn">
+    <span class="free-badge">無料！</span>
+    <span class="cta-text-wrap">
+      <span class="cta-sub-text">＼ 登録カンタン！今すぐ始めよう ／</span>
+      <span class="cta-main-text">今すぐベビーシッターを始める！</span>
+    </span>
+    <span class="cta-arrow">&#x25BC;</span>
+  </a>
+</div>
+
+<!-- ===== SECTION NAV ===== -->
+<nav class="section-nav">
+  <div class="section-nav-inner">
+    <div class="section-nav-grid">
+      <a href="#merit" class="section-nav-item">
+        <p class="nav-label">ベビ&#x2661;ママだから可能！</p>
+        <p class="nav-title">5大メリットにご注目</p>
+        <p class="nav-arrow">&#x25BC;</p>
+      </a>
+      <a href="#income" class="section-nav-item">
+        <p class="nav-label">週2なら？フルタイムなら？</p>
+        <p class="nav-title">想定月収大公開！</p>
+        <p class="nav-arrow">&#x25BC;</p>
+      </a>
+      <a href="#voice" class="section-nav-item">
+        <p class="nav-label">ベビーシッターと保育園勤務はここが違う！</p>
+        <p class="nav-title">所属シッター体験談</p>
+        <p class="nav-arrow">&#x25BC;</p>
+      </a>
+      <a href="#safety" class="section-nav-item">
+        <p class="nav-label">業界大手ならでは！</p>
+        <p class="nav-title">「4つの安心」をお約束</p>
+        <p class="nav-arrow">&#x25BC;</p>
+      </a>
+    </div>
+    <div class="section-nav-full">
+      <a href="#form" class="section-nav-item" style="display:block;">
+        <p class="nav-title">応募条件／申し込みフォーム</p>
+        <p class="nav-arrow">&#x25BC;</p>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== LEAD SECTION ===== -->
+<section class="lead-section">
+  <h2>「子どもが好き！」を活かして<br>子育て家庭のサポートを<br>仕事にしませんか?</h2>
+  <ul class="lead-list">
+    <li><span class="check-icon">&#x2611;</span><span><span class="pink">20〜60代まで</span>幅広い年代のシッターが活躍</span></li>
+    <li><span class="check-icon">&#x2611;</span><span><span class="pink">保育士さん</span>歓迎！<span class="pink">未経験の方</span>もOK！</span></li>
+    <li><span class="check-icon">&#x2611;</span><span><span class="pink">すき間時間勤務</span>、<span class="pink">Wワークで働く方</span>も多数！</span></li>
+    <li><span class="check-icon">&#x2611;</span><span>フルタイムで<span class="pink">月40万円以上</span>しっかり稼げる</span></li>
+  </ul>
+</section>
+
+<!-- ===== MERIT SECTION ===== -->
+<section class="merit-section" id="merit">
+  <div class="merit-inner">
+    <div class="section-heading">
+      <p class="heading-sub">ベビ&#x2661;ママだからできる！</p>
+      <h2>ベビ&#x2661;ママを選ぶメリット</h2>
+      <div class="heading-dots">
+        <span class="heading-dot"></span>
+        <span class="heading-dot"></span>
+        <span class="heading-dot"></span>
+      </div>
+    </div>
+
+    <!-- POINT 1 -->
+    <article class="merit-card">
+      <div class="point-badge"><span class="point-label">POINT</span><span class="point-number">1</span></div>
+      <h3 class="merit-title">研究に基づいた保育で安心<br>充実の研修制度</h3>
+      <div class="merit-content">
+        <div class="merit-photo">&#x1F469;&#x200D;&#x1F393;</div>
+        <ul class="merit-points">
+          <li><span class="merit-check">&#x2714;</span>基本から育児グッズ体験までの研修</li>
+          <li><span class="merit-check">&#x2714;</span>「新人限定ボーナス」など制度も充実</li>
+          <li><span class="merit-check">&#x2714;</span>個別フォローアップもOK</li>
+        </ul>
+      </div>
+      <p class="merit-desc">有資格者はもちろん、<span class="pink">子育て中の方も多く活躍しています</span>。初めてでも安心してお仕事をはじめられます。</p>
+    </article>
+
+    <!-- POINT 2 -->
+    <article class="merit-card" id="income">
+      <div class="point-badge"><span class="point-label">POINT</span><span class="point-number">2</span></div>
+      <h3 class="merit-title">手数料たったの5%！<br>月収40万円も可能です</h3>
+      <div class="income-image">
+        <p class="income-label">※国指定研修受講時</p>
+        <div class="income-range">
+          <span class="label">手取り<br>時給</span>
+          <span class="number">1,500</span>
+          <span class="unit">円</span>
+          <span class="separator">〜</span>
+          <span class="number">2,000</span>
+          <span class="unit">円</span>
+        </div>
+      </div>
+      <p class="merit-desc">たくさんのご依頼とバリエーションがあるので、希望収入額やライフスタイルのご都合に合わせてしっかりと収入につなげられます。<br>週3で月収10万円、週5で月収40万円も可能です！<br><br>※交通費全額支給 ※送迎プランは30分で1時間分の時給（報酬単価）<br>※シッター手数料はたったの<span class="pink">5%</span>。他社と比べて圧倒的に低い手数料で、手取り時給（報酬単価）をご提示しています。</p>
+    </article>
+
+    <!-- POINT 3 -->
+    <article class="merit-card">
+      <div class="point-badge"><span class="point-label">POINT</span><span class="point-number">3</span></div>
+      <h3 class="merit-title">時間と場所は自分で選べる<br>だから続けられる！</h3>
+      <div class="merit-content">
+        <div class="merit-photo">&#x1F4C5;</div>
+        <ul class="merit-points">
+          <li><span class="merit-check">&#x2714;</span>週1からでも！</li>
+          <li><span class="merit-check">&#x2714;</span>当日でもお仕事OK</li>
+          <li><span class="merit-check">&#x2714;</span>シフト自由</li>
+        </ul>
+      </div>
+      <p class="merit-desc">自分のライフスタイルに合わせて、<span class="pink">働く時間も場所も自由に選べます</span>。子育て中のママや、Wワーク、フルタイムなど様々な働き方が可能です。関東エリア（東京都・埼玉県・千葉県・神奈川県）で活動できます。</p>
+    </article>
+
+    <!-- POINT 4 -->
+    <article class="merit-card">
+      <div class="point-badge"><span class="point-label">POINT</span><span class="point-number">4</span></div>
+      <h3 class="merit-title">1対1の保育だから<br>子どもとじっくり向き合える</h3>
+      <div class="merit-content">
+        <div class="merit-photo">&#x1F476;</div>
+        <ul class="merit-points">
+          <li><span class="merit-check">&#x2714;</span>お子様一人ひとりに集中</li>
+          <li><span class="merit-check">&#x2714;</span>保育園とは違う丁寧な保育</li>
+          <li><span class="merit-check">&#x2714;</span>成長を間近で見届けられる</li>
+        </ul>
+      </div>
+      <p class="merit-desc">ベビーシッターは<span class="pink">1対1でお子様と向き合える</span>のが最大の魅力。0ヶ月〜10歳までのお子様のお世話を通じて、一人ひとりの成長に寄り添えるやりがいのあるお仕事です。</p>
+    </article>
+
+    <!-- POINT 5 -->
+    <article class="merit-card">
+      <div class="point-badge"><span class="point-label">POINT</span><span class="point-number">5</span></div>
+      <h3 class="merit-title">充実のサポート体制<br>困ったときも安心</h3>
+      <div class="merit-content">
+        <div class="merit-photo">&#x1F4DE;</div>
+        <ul class="merit-points">
+          <li><span class="merit-check">&#x2714;</span>専任スタッフが常時サポート</li>
+          <li><span class="merit-check">&#x2714;</span>保険完備（1事故5億円）</li>
+          <li><span class="merit-check">&#x2714;</span>トラブル時の24時間対応</li>
+        </ul>
+      </div>
+      <p class="merit-desc">お仕事中に困ったことがあっても、<span class="pink">専任スタッフがしっかりサポート</span>。賠償責任保険も完備で、安心してお仕事に集中できます。</p>
+    </article>
+
+    <!-- CTA -->
+    <div class="cta-wrap" style="background:transparent;">
+      <a href="#form" class="cta-btn">
+        <span class="free-badge">無料！</span>
+        <span class="cta-text-wrap">
+          <span class="cta-sub-text">＼ 登録カンタン！今すぐ始めよう ／</span>
+          <span class="cta-main-text">今すぐベビーシッターを始める！</span>
+        </span>
+        <span class="cta-arrow">&#x25BC;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIFESTYLE SECTION ===== -->
+<section class="lifestyle-section">
+  <div class="lifestyle-inner">
+    <div class="section-heading">
+      <p class="heading-sub">ライフスタイルに合わせた働き方</p>
+      <h2>こんな働き方ができます</h2>
+    </div>
+    <div class="lifestyle-cards">
+      <div class="lifestyle-card">
+        <div class="lifestyle-card-photo">&#x1F469;&#x200D;&#x1F37C;</div>
+        <div class="lifestyle-card-body">
+          <span class="lifestyle-card-tag">子育てママ</span>
+          <h3 class="lifestyle-card-title">週2〜3日、お子様が園に行っている間に</h3>
+          <p class="lifestyle-card-desc">想定月収：約5万円〜10万円。自分の子育て経験を活かして、空いた時間を有効活用できます。</p>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="lifestyle-card-photo">&#x1F4BC;</div>
+        <div class="lifestyle-card-body">
+          <span class="lifestyle-card-tag">Wワーク</span>
+          <h3 class="lifestyle-card-title">平日夜や週末を活用して副収入</h3>
+          <p class="lifestyle-card-desc">想定月収：約10万円以上。本業の合間にベビーシッターとして活躍。柔軟にスケジュール調整可能です。</p>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="lifestyle-card-photo">&#x1F393;</div>
+        <div class="lifestyle-card-body">
+          <span class="lifestyle-card-tag">保育士・有資格者</span>
+          <h3 class="lifestyle-card-title">資格を活かしてフルタイムで</h3>
+          <p class="lifestyle-card-desc">想定月収：約40万円以上。保育士や看護師の資格を活かして、高時給でしっかり稼げます。</p>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="lifestyle-card-photo">&#x1F9D3;</div>
+        <div class="lifestyle-card-body">
+          <span class="lifestyle-card-tag">シニア世代</span>
+          <h3 class="lifestyle-card-title">豊富な経験を活かして社会貢献</h3>
+          <p class="lifestyle-card-desc">子育て経験豊富なシニア世代の方も大歓迎。お孫さんのお世話感覚で、やりがいのあるお仕事です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICE SECTION ===== -->
+<section class="voice-section" id="voice">
+  <div class="voice-inner">
+    <div class="section-heading">
+      <h2>シッター体験談</h2>
+    </div>
+    <div class="voice-heading">
+      <h3>自分の子育て経験を活かせて<br>刺激ももらえる！</h3>
+    </div>
+    <div class="voice-video-placeholder">&#x1F3AC;</div>
+    <p class="voice-note">※他社様ではサービス利用料が差し引かれる前の時給（報酬単価）で提示されていることが多いですが、ベビ&#x2661;ママでは手取り時給（報酬単価）をご提示しています。</p>
+
+    <div class="voice-heading">
+      <h3>プライベートと両立！<br>1対1で向き合える楽しさも。</h3>
+    </div>
+    <div class="voice-video-placeholder">&#x1F3AC;</div>
+
+    <!-- CTA -->
+    <div class="cta-wrap" style="background:transparent;">
+      <a href="#form" class="cta-btn">
+        <span class="free-badge">無料！</span>
+        <span class="cta-text-wrap">
+          <span class="cta-sub-text">＼ 登録カンタン！今すぐ始めよう ／</span>
+          <span class="cta-main-text">今すぐベビーシッターを始める！</span>
+        </span>
+        <span class="cta-arrow">&#x25BC;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="section-heading">
+      <h2>シッターさんの口コミ</h2>
+    </div>
+    <div class="reviews-scroll">
+      <div class="review-card">
+        <div class="review-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <p class="review-text">子育て経験を活かせるお仕事で、とてもやりがいを感じています。時間の融通が利くので、自分の子どもの行事にも参加できます。</p>
+        <p class="review-author">40代・子育てママ・東京都</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <p class="review-text">保育士の経験があるので高時給をいただけます。フルタイムで月40万円以上稼げて、保育園勤務時代より収入アップしました。</p>
+        <p class="review-author">30代・有資格者・埼玉県</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606;</div>
+        <p class="review-text">副業として始めましたが、週末だけでも月に5万円以上の収入になります。手数料が5%と低いのが魅力です。</p>
+        <p class="review-author">20代・Wワーク・千葉県</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <p class="review-text">孫の世話をしている感覚で楽しくお仕事しています。研修もしっかりしているので安心して始められました。</p>
+        <p class="review-author">60代・シニア・神奈川県</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SAFETY ===== -->
+<section class="safety-section" id="safety">
+  <div class="safety-inner">
+    <div class="section-heading">
+      <p class="heading-sub">業界大手ならでは！</p>
+      <h2>「4つの安心」をお約束</h2>
+    </div>
+    <div class="safety-grid">
+      <div class="safety-card">
+        <div class="safety-icon">&#x1F6E1;</div>
+        <h3 class="safety-title">賠償責任保険完備</h3>
+        <p class="safety-desc">1事故あたり5億円の賠償責任保険に加入。万一の事故にもしっかり対応します。</p>
+      </div>
+      <div class="safety-card">
+        <div class="safety-icon">&#x1F4DE;</div>
+        <h3 class="safety-title">24時間サポート</h3>
+        <p class="safety-desc">お仕事中に困ったことがあれば、専任スタッフがいつでもサポートいたします。</p>
+      </div>
+      <div class="safety-card">
+        <div class="safety-icon">&#x1F4DA;</div>
+        <h3 class="safety-title">充実の研修制度</h3>
+        <p class="safety-desc">初回研修約1.5時間から始められます。育児グッズ体験など実践的な内容です。</p>
+      </div>
+      <div class="safety-card">
+        <div class="safety-icon">&#x1F91D;</div>
+        <h3 class="safety-title">マッチングサポート</h3>
+        <p class="safety-desc">プロフィール作成から依頼獲得まで、専任スタッフがしっかりサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow-section">
+  <div class="flow-inner">
+    <div class="section-heading">
+      <h2>登録の流れ</h2>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-circle">
+          <span class="step-label">STEP</span>
+          <span class="step-number">1</span>
+        </div>
+        <h3 class="flow-step-title">WEBで簡単登録</h3>
+        <p class="flow-step-desc">フォームから必要事項を入力して登録申し込み</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-circle">
+          <span class="step-label">STEP</span>
+          <span class="step-number">2</span>
+        </div>
+        <h3 class="flow-step-title">初回研修</h3>
+        <p class="flow-step-desc">約1.5時間の研修で基本をしっかり学びます</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-circle">
+          <span class="step-label">STEP</span>
+          <span class="step-number">3</span>
+        </div>
+        <h3 class="flow-step-title">プロフィール作成</h3>
+        <p class="flow-step-desc">写真やスキルを登録してマッチング開始</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-circle">
+          <span class="step-label">STEP</span>
+          <span class="step-number">4</span>
+        </div>
+        <h3 class="flow-step-title">お仕事スタート！</h3>
+        <p class="flow-step-desc">依頼を受けてベビーシッターのお仕事開始</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <p class="stats-label">シッター満足度</p>
+    <p class="stats-number">97<span class="unit">%</span></p>
+    <p class="stats-desc">※2024年シッター向けアンケート調査結果</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-heading">
+      <h2>よくある質問</h2>
+    </div>
+    <div class="faq-item open">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <span class="q-icon">Q</span>
+        <span>保育の資格がなくても登録できますか？</span>
+        <span class="toggle">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        <p class="faq-answer-inner">はい、資格がなくても登録可能です。18歳以上の健康な方であればどなたでもご登録いただけます。保育士、看護師、幼稚園教諭などの資格をお持ちの方は歓迎いたします。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <span class="q-icon">Q</span>
+        <span>どのくらい稼げますか？</span>
+        <span class="toggle">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        <p class="faq-answer-inner">時給は1,500〜2,000円（ご自身で自由に設定可能）。週3日で月収約10万円、フルタイム（週5日）で月収40万円以上も可能です。手数料はたったの5%です。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <span class="q-icon">Q</span>
+        <span>交通費は支給されますか？</span>
+        <span class="toggle">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        <p class="faq-answer-inner">はい、交通費は全額支給されます。また、移動費として1回500円が別途支給されます。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <span class="q-icon">Q</span>
+        <span>雇用形態はどのようになりますか？</span>
+        <span class="toggle">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        <p class="faq-answer-inner">業務委託契約となります。お支払いは月末締め・翌月末払いです。確定申告はご自身で行っていただきます。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <span class="q-icon">Q</span>
+        <span>対応エリアはどこですか？</span>
+        <span class="toggle">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        <p class="faq-answer-inner">東京都（八王子市など）、埼玉県、千葉県（流山市・市川市など）、神奈川県の関東エリアが主な活動エリアです。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <span class="q-icon">Q</span>
+        <span>研修はどのような内容ですか？</span>
+        <span class="toggle">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        <p class="faq-answer-inner">初回研修は約1.5時間。基本的な保育の知識から育児グッズの体験まで、実践的な内容を学べます。登録事務所（東京都渋谷区神南1-11-4 FPGリンクス神南 5階）で実施しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REQUIREMENTS ===== -->
+<section class="req-section" id="form">
+  <div class="req-inner">
+    <div class="section-heading">
+      <h2>応募条件</h2>
+    </div>
+    <div class="req-box">
+      <div class="req-box-header">応募資格</div>
+      <div class="req-box-body">
+        <span class="pink">18歳以上</span>の健康な方（性別不問）<br>
+        歓迎：保育士・看護師・幼稚園教諭の資格をお持ちの方<br>
+        <span class="pink">未経験の方も大歓迎</span>です！
+      </div>
+    </div>
+    <div class="req-box">
+      <div class="req-box-header">報酬</div>
+      <div class="req-box-body">
+        時給：<span class="pink">1,500〜2,000円</span>（ご自身で自由に設定可能）<br>
+        手数料：たったの<span class="pink">5%</span><br>
+        交通費：全額支給 ＋ 移動費500円/回<br>
+        支払い：月末締め・翌月末払い
+      </div>
+    </div>
+    <div class="req-box">
+      <div class="req-box-header">勤務エリア</div>
+      <div class="req-box-body">
+        <span class="pink">東京都</span>（八王子市など）、<span class="pink">埼玉県</span>、<span class="pink">千葉県</span>（流山市・市川市など）、<span class="pink">神奈川県</span><br>
+        ※関東エリアでベビーシッター求人を募集中
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="cta-wrap" style="background:transparent; padding: 40px 0;">
+      <a href="https://www.bebi-mama.jp/register" class="cta-btn">
+        <span class="free-badge">無料！</span>
+        <span class="cta-text-wrap">
+          <span class="cta-sub-text">＼ 登録は無料！最短3分 ／</span>
+          <span class="cta-main-text">今すぐベビーシッターを始める！</span>
+        </span>
+        <span class="cta-arrow">&#x25BC;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JOB AREA ===== -->
+<section class="area-section">
+  <div class="area-inner">
+    <h2 class="area-heading">対応エリア - 関東のベビーシッター求人</h2>
+    <div class="area-list">
+      <span class="area-tag">東京都のベビーシッター求人</span>
+      <span class="area-tag">埼玉県のベビーシッター求人</span>
+      <span class="area-tag">千葉県のベビーシッター求人</span>
+      <span class="area-tag">神奈川県のベビーシッター求人</span>
+      <span class="area-tag">八王子市</span>
+      <span class="area-tag">流山市</span>
+      <span class="area-tag">市川市</span>
+      <span class="area-tag">関東エリア全域</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p class="footer-logo">ベビ&#x2661;ママ</p>
+  <div class="footer-links">
+    <a href="https://www.bebi-mama.jp/">トップページ</a>
+    <a href="https://www.bebi-mama.jp/about">サービスについて</a>
+    <a href="https://www.bebi-mama.jp/contact">お問い合わせ</a>
+    <a href="https://www.bebi-mama.jp/privacy">プライバシーポリシー</a>
+  </div>
+  <p class="footer-copy">&copy; 2025 ベビ&#x2661;ママ All rights reserved.</p>
+</footer>
+
+<!-- ===== BACK TO TOP ===== -->
+<a href="#" class="back-to-top" id="backToTop">&#x25B2;</a>
+
+<!-- ===== FLOATING CTA ===== -->
+<div class="floating-cta">
+  <a href="#form" class="cta-btn">
+    <span class="free-badge">無料！</span>
+    <span class="cta-text-wrap">
+      <span class="cta-main-text">今すぐベビーシッターを始める！</span>
+    </span>
+    <span class="cta-arrow">&#x25BC;</span>
+  </a>
+</div>
 
 <script>
+// Back to top button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 });
-
-// Show/hide floating CTA on scroll
-let lastScroll = 0;
-const floatingCta = document.querySelector('.floating-cta');
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  if (y > 600) {
-    floatingCta.style.display = 'block';
-  } else {
-    floatingCta.style.display = 'none';
-  }
-  lastScroll = y;
-});
 </script>
-
 </body>
 </html>
