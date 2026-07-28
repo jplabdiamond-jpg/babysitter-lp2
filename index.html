@@ -121,14 +121,19 @@ ul { list-style: none; }
 /* ===== HERO (KV) SECTION ===== */
 .hero {
   width: 100%;
-  overflow: hidden;
-}
-.hero img {
-  width: 100%;
   height: 53vw;
   max-height: 800px;
-  object-fit: cover;
-  object-position: center 22%;
+  overflow: hidden;
+  position: relative;
+  background: url('site2_hero1.png') center 22% / cover no-repeat;
+}
+.hero img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90%;
+  width: auto;
   display: block;
 }
 
@@ -1006,7 +1011,7 @@ ul { list-style: none; }
 
 <!-- ===== HERO (KV) ===== -->
 <section class="hero">
-  <img src="site2_hero2.png" alt="あなたの時間を、誰かの笑顔につなげるお仕事 — 自分らしく働けるベビママで活躍しませんか？ 現役シッター運営で安心・資格研修済みシッターのみ登録・サポート＆保険完備で安心">
+  <img src="site2_hero2_text_only.png" alt="あなたの時間を、誰かの笑顔につなげるお仕事 — 自分らしく働けるベビママで活躍しませんか？ 現役シッター運営で安心・資格研修済みシッターのみ登録・サポート＆保険完備で安心">
 </section>
 
 <!-- ===== RECRUIT BANNER ===== -->
