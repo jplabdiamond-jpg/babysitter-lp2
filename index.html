@@ -41,7 +41,7 @@
 <style>
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   font-size: 16px;
@@ -49,6 +49,7 @@ body {
   line-height: 1.8;
   background: #fff;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
@@ -134,6 +135,7 @@ ul { list-style: none; }
   transform: translateY(-50%);
   height: 63%;
   width: auto;
+  max-width: 60%;
   display: block;
 }
 
