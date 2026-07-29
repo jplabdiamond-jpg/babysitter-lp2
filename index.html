@@ -388,7 +388,7 @@ ul { list-style: none; }
 /* ===== MERIT SECTION ===== */
 .merit-section {
   padding: 80px 30px;
-  background: #fff;
+  background: linear-gradient(180deg, #fff 0%, #fff9f3 30%, #fff5ed 100%);
 }
 .merit-inner {
   max-width: 920px;
@@ -396,88 +396,117 @@ ul { list-style: none; }
 }
 .section-heading {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 .section-heading .heading-sub {
-  font-size: 16px;
-  color: #1e1e1e;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f7a94b;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
 }
 .section-heading .heading-sub::before,
 .section-heading .heading-sub::after {
   content: '';
   display: inline-block;
-  width: 2px;
-  height: 24px;
-  background: #1e1e1e;
+  width: 2.5px;
+  height: 26px;
+  background: linear-gradient(180deg, #fcc6d0, #f7a94b);
+  border-radius: 2px;
 }
 .section-heading .heading-sub::before { transform: rotate(-20deg); }
 .section-heading .heading-sub::after { transform: rotate(20deg); }
 .section-heading h2 {
-  font-size: 34px;
-  font-weight: 900;
-  color: #1e1e1e;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #e24a66;
   line-height: 1.5;
+  letter-spacing: 1px;
 }
 .section-heading .heading-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 15px;
+  gap: 10px;
+  margin-top: 18px;
 }
 .section-heading .heading-dot {
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #ffe4a0;
 }
+.section-heading .heading-dot:nth-child(1) { background: #fcc6d0; }
+.section-heading .heading-dot:nth-child(2) { background: #f7a94b; }
+.section-heading .heading-dot:nth-child(3) { background: #fcc6d0; }
 
 /* ===== MERIT CARDS ===== */
 .merit-card {
-  border: 2px solid #f0c040;
-  border-radius: 20px;
-  padding: 40px;
-  margin-bottom: 40px;
+  border: 2.5px solid #fce4d6;
+  border-radius: 24px;
+  padding: 44px 40px;
+  margin-bottom: 44px;
   position: relative;
   overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(226,74,102,0.06);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.merit-card:hover {
+  box-shadow: 0 10px 32px rgba(226,74,102,0.12);
+  transform: translateY(-3px);
+}
+.merit-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #fcc6d0, #f7a94b, #fcc6d0);
+  border-radius: 0 0 24px 24px;
 }
 .merit-card .point-badge {
   position: absolute;
-  top: -30px;
-  left: -15px;
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #fb922c 0%, #f7a94b 100%);
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #e24a66 0%, #f7a94b 100%);
+  border-radius: 0 0 24px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 3px 10px rgba(251,146,44,0.3);
+  box-shadow: 0 4px 12px rgba(226,74,102,0.25);
 }
 .merit-card .point-badge .point-label {
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 .merit-card .point-badge .point-number {
-  font-size: 28px;
-  font-weight: 900;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
   line-height: 1;
   margin-top: -2px;
 }
 .merit-card .merit-title {
-  font-size: 26px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 28px;
   font-weight: 700;
   color: #e24a66;
   text-align: center;
   margin-bottom: 30px;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
 }
 .merit-card .merit-content {
   display: flex;
@@ -487,33 +516,47 @@ ul { list-style: none; }
 .merit-card .merit-photo {
   flex: 0 0 280px;
   height: 200px;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f0e8e0, #e8e0d8);
+  background: linear-gradient(135deg, #fff5ed, #fce4d6);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 60px;
+  border: 2px solid #fce4d6;
 }
 .merit-card .merit-points {
   flex: 1;
 }
 .merit-card .merit-points li {
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 18px;
-  font-weight: 700;
-  padding: 8px 0;
+  font-weight: 500;
+  padding: 10px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  border-bottom: 1px dashed #fce4d6;
+}
+.merit-card .merit-points li:last-child {
+  border-bottom: none;
 }
 .merit-card .merit-points li .merit-check {
-  color: #fb922c;
+  color: #e24a66;
   font-size: 18px;
+  font-weight: 700;
 }
 .merit-card .merit-desc {
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 15px;
-  line-height: 1.8;
-  margin-top: 20px;
+  font-weight: 400;
+  line-height: 2;
+  margin-top: 24px;
+  color: #555;
+  background: #fef9f5;
+  border-radius: 12px;
+  padding: 18px 20px;
+  border-left: 4px solid #fcc6d0;
   color: #333;
 }
 .merit-card .merit-desc .pink { color: #e24a66; font-weight: 700; }
@@ -1019,7 +1062,8 @@ ul { list-style: none; }
   .lead-list li .check-icon { width: 40px; height: 40px; }
 
   .merit-card { padding: 30px 20px; }
-  .merit-card .merit-title { font-size: 20px; }
+  .merit-card .merit-title { font-size: 22px; }
+  .section-heading h2 { font-size: 28px; }
   .merit-card .merit-content { flex-direction: column; }
   .merit-card .merit-photo { flex: none; width: 100%; height: 180px; }
   .merit-card .merit-points li { font-size: 15px; }
