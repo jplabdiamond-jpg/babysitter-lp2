@@ -317,17 +317,22 @@ ul { list-style: none; }
   text-align: left;
 }
 .lead-list li {
-  font-size: 20px;
-  font-weight: 500;
-  padding: 12px 0;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 14px 0;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
 }
 .lead-list li .check-icon {
-  color: #e24a66;
-  font-size: 22px;
+  width: 55px;
+  height: 55px;
   flex-shrink: 0;
+}
+.lead-list li .check-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .lead-list li .pink { color: #e24a66; font-weight: 700; }
 
@@ -961,7 +966,8 @@ ul { list-style: none; }
 
   .lead-section { padding: 50px 20px; }
   .lead-section h2 { font-size: 22px; }
-  .lead-list li { font-size: 16px; }
+  .lead-list li { font-size: 18px; }
+  .lead-list li .check-icon { width: 40px; height: 40px; }
 
   .merit-card { padding: 30px 20px; }
   .merit-card .merit-title { font-size: 20px; }
@@ -1077,10 +1083,10 @@ ul { list-style: none; }
 <section class="lead-section">
   <h2>「子どもが好き！」を活かして<br>子育て家庭のサポートを<br>仕事にしませんか?</h2>
   <ul class="lead-list">
-    <li><span class="check-icon">&#x2611;</span><span><span class="pink">自分のペース</span>で時間設定が可能</span></li>
-    <li><span class="check-icon">&#x2611;</span><span><span class="pink">時給1,500円〜</span>自由に設定、月収5万〜40万円以上も</span></li>
-    <li><span class="check-icon">&#x2611;</span><span>仲介手数料は<span class="pink">ご購入金額の5%＋税</span></span></li>
-    <li><span class="check-icon">&#x2611;</span><span>最大<span class="pink">5億円</span>の賠償責任保険で安心</span></li>
+    <li><span class="check-icon"><img src="check.png" alt="✓"></span><span><span class="pink">自分のペース</span>で時間設定が可能</span></li>
+    <li><span class="check-icon"><img src="check.png" alt="✓"></span><span><span class="pink">時給1,500円〜</span>自由に設定、月収5万〜40万円以上も</span></li>
+    <li><span class="check-icon"><img src="check.png" alt="✓"></span><span>仲介手数料は<span class="pink">ご購入金額の5%＋税</span></span></li>
+    <li><span class="check-icon"><img src="check.png" alt="✓"></span><span>最大<span class="pink">5億円</span>の賠償責任保険で安心</span></li>
   </ul>
 </section>
 
