@@ -358,8 +358,10 @@ ul { list-style: none; }
 .lead-list {
   max-width: 800px;
   margin: 0 auto;
-  display: inline-block;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
 }
 .lead-list li {
   font-family: "M PLUS Rounded 1c", "Zen Maru Gothic", sans-serif;
@@ -369,6 +371,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 15px;
+  text-align: left;
 }
 .lead-list li .check-icon {
   width: 55px;
