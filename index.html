@@ -63,17 +63,21 @@ ul { list-style: none; }
 /* ===== HEADER ===== */
 .header {
   width: 100%;
-  max-width: 100vw;
   height: 80px;
   background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 60px;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
 }
 .header-logo {
@@ -989,23 +993,25 @@ ul { list-style: none; }
 
 <!-- ===== HEADER ===== -->
 <header class="header">
-  <a href="https://www.bebi-mama.jp/" class="header-logo">
-    <img src="babymama_logo_trimmed.png" alt="ベビ♡ママ ベビーシッターマッチング">
-  </a>
-  <nav class="header-nav">
-    <a href="https://www.bebi-mama.jp/">
-      <span class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></span>
-      <span class="nav-text">トップページ</span>
+  <div class="header-inner">
+    <a href="https://www.bebi-mama.jp/" class="header-logo">
+      <img src="babymama_logo_trimmed.png" alt="ベビ♡ママ ベビーシッターマッチング">
     </a>
-    <a href="https://www.bebi-mama.jp/contact">
-      <span class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></span>
-      <span class="nav-text">お問合せ</span>
-    </a>
-    <a href="#form" class="btn-header-cta">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-      今すぐ登録する！
-    </a>
-  </nav>
+    <nav class="header-nav">
+      <a href="https://www.bebi-mama.jp/">
+        <span class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></span>
+        <span class="nav-text">トップページ</span>
+      </a>
+      <a href="https://www.bebi-mama.jp/contact">
+        <span class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></span>
+        <span class="nav-text">お問合せ</span>
+      </a>
+      <a href="#form" class="btn-header-cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        今すぐ登録する！
+      </a>
+    </nav>
+  </div>
 </header>
 
 <!-- ===== HERO (KV) ===== -->
