@@ -150,10 +150,12 @@ ul { list-style: none; }
 }
 
 /* ===== RECRUIT BANNER (IMAGE) ===== */
+.recruit-cta-wrapper {
+  background: linear-gradient(rgba(255,249,240,0.7), rgba(255,249,240,0.7)), url('wallpaper-background-several-transparent-circles-small.jpg') center / cover no-repeat;
+}
 .recruit-banner {
   text-align: center;
-  background: linear-gradient(rgba(255,249,240,0.7), rgba(255,249,240,0.7)), url('wallpaper-background-several-transparent-circles-small.jpg') center / cover no-repeat;
-  padding: 40px 20px;
+  padding: 40px 20px 0;
 }
 .recruit-banner img {
   max-width: 880px;
@@ -167,7 +169,6 @@ ul { list-style: none; }
   padding: 0 20px 30px;
   margin-top: -10px;
   text-align: center;
-  background: linear-gradient(rgba(255,249,240,0.7), rgba(255,249,240,0.7)), url('wallpaper-background-several-transparent-circles-small.jpg') center / cover no-repeat;
 }
 .cta-btn {
   display: inline-flex;
@@ -1029,12 +1030,12 @@ ul { list-style: none; }
   </div>
 </section>
 
-<!-- ===== RECRUIT BANNER ===== -->
+<!-- ===== RECRUIT BANNER + CTA ===== -->
+<div class="recruit-cta-wrapper">
 <section class="recruit-banner">
   <img src="section2_sitter_recruit_transparent3.png" alt="新人シッターさん大募集！週1〜フルタイムまで選べる・保育資格なしでもOK・実質時給2,000円〜も可・当日空いている時間でも働ける">
 </section>
 
-<!-- ===== CTA BUTTON ===== -->
 <div class="cta-wrap">
   <a href="#form" class="cta-btn">
     <span class="free-badge">無料！</span>
@@ -1044,6 +1045,7 @@ ul { list-style: none; }
     </span>
     <span class="cta-arrow">&#x25BC;</span>
   </a>
+</div>
 </div>
 
 <!-- ===== SECTION NAV ===== -->
