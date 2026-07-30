@@ -1415,7 +1415,10 @@ ul { list-style: none; }
 
   .stats-number { font-size: 72px; }
 
+  .cta-btn { padding: 15px 20px; }
+  .cta-btn .cta-main-text { white-space: normal; }
   .floating-cta { display: block; }
+  .floating-cta .cta-btn { padding: 12px 15px; }
   .back-to-top { bottom: 80px; }
 
   .section-heading h2 { font-size: 24px; }
@@ -2245,9 +2248,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       const delay = idx % cols;
       if (delay > 0 && delay <= 4) el.classList.add('anim-delay-' + delay);
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 
   document.querySelectorAll('.anim-ready').forEach(el => observer.observe(el));
+
+  // Safety fallback: if any element is still hidden after 3s, force show
+  setTimeout(function() {
+    document.querySelectorAll('.anim-ready').forEach(function(el) {
+      if (getComputedStyle(el).opacity === '0') {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }
+    });
+  }, 3000);
 
   // Lead list items: scale up with stagger
   document.querySelectorAll('.lead-list li').forEach(function(li, i) {
@@ -2258,7 +2271,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         e.target.style.animationDelay = (i * 0.12) + 's';
         e.target.classList.add('anim-lead-up');
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.05 });
     liObs.observe(li);
   });
 
@@ -2271,7 +2284,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         pen.classList.add('anim-highlight');
       });
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.05 });
   document.querySelectorAll('.merit-card').forEach(card => {
     if (card.querySelector('.highlight-pen')) highlightObserver.observe(card);
   });
