@@ -1482,6 +1482,18 @@ ul { list-style: none; }
   animation: zoomIn15 1.5s ease-out both;
 }
 
+/* Lead list items: scale up entrance */
+@keyframes leadItemUp {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+.lead-list li {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.lead-list li.anim-lead-up {
+  animation: leadItemUp 0.5s ease-out forwards;
+}
 
 /* Highlighter pen animation */
 @keyframes highlighterDraw {
@@ -1532,6 +1544,8 @@ ul { list-style: none; }
   .heading-mascot.anim-bounce-left, .heading-mascot.anim-bounce-right { animation: none; opacity: 1; transform: none; }
   .hero-text-overlay img { animation: none; opacity: 1; transform: none; }
   .recruit-banner img, .lead-section > img { animation: none; opacity: 1; transform: scale(1.15); }
+  .lead-list li { opacity: 1 !important; transform: none !important; }
+  .lead-list li.anim-lead-up { animation: none; }
 }
 </style>
 </head>
@@ -2238,6 +2252,18 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
   document.querySelectorAll('.anim-ready').forEach(el => observer.observe(el));
 
+  // Lead list items: scale up with stagger
+  document.querySelectorAll('.lead-list li').forEach(function(li, i) {
+    var liObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        liObs.unobserve(e.target);
+        e.target.style.animationDelay = (i * 0.12) + 's';
+        e.target.classList.add('anim-lead-up');
+      });
+    }, { threshold: 0.2 });
+    liObs.observe(li);
+  });
 
   // Highlighter pen: trigger when merit-card becomes visible
   const highlightObserver = new IntersectionObserver((entries) => {
