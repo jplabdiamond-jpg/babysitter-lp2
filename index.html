@@ -633,7 +633,19 @@ ul { list-style: none; }
 /* ===== LIFESTYLE (SENIOR SET) ===== */
 .lifestyle-section {
   padding: 80px 30px;
-  background: linear-gradient(180deg, #fff 0%, #fff9f3 30%, #fff5ed 100%);
+  background: url('wallpaper-background-several-transparent-circles-small.jpg') center/cover no-repeat;
+  position: relative;
+}
+.lifestyle-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(252, 248, 243, 0.6);
+  z-index: 0;
+}
+.lifestyle-section > * {
+  position: relative;
+  z-index: 1;
 }
 .lifestyle-inner {
   max-width: 960px;
