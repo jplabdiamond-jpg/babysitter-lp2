@@ -633,54 +633,148 @@ ul { list-style: none; }
 /* ===== LIFESTYLE (SENIOR SET) ===== */
 .lifestyle-section {
   padding: 80px 30px;
-  background: #fff;
+  background: linear-gradient(180deg, #fff 0%, #fff9f3 30%, #fff5ed 100%);
 }
 .lifestyle-inner {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
 }
 .lifestyle-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 28px;
 }
 .lifestyle-card {
-  border: 2px solid #f0c040;
-  border-radius: 16px;
+  border: none;
+  border-radius: 24px;
   overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(226, 74, 102, 0.08), 0 1px 4px rgba(0,0,0,0.04);
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
 }
+.lifestyle-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(90deg, #f7a94b, #e24a66);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.lifestyle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(226, 74, 102, 0.13), 0 2px 8px rgba(0,0,0,0.06);
+}
+.lifestyle-card:hover::after { opacity: 1; }
 .lifestyle-card-photo {
-  height: 180px;
-  background: linear-gradient(135deg, #f0e8e0, #e8e0d8);
+  height: 140px;
+  background: linear-gradient(135deg, #fff5ed 0%, #fce4d6 50%, #fdd6c8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 60px;
+  position: relative;
+}
+.lifestyle-card-photo svg {
+  width: 72px;
+  height: 72px;
 }
 .lifestyle-card-body {
-  padding: 20px;
+  padding: 22px 24px 26px;
 }
 .lifestyle-card-tag {
   display: inline-block;
-  background: #fb922c;
+  background: linear-gradient(135deg, #f7a94b, #e24a66);
   color: #fff;
   font-size: 12px;
   font-weight: 700;
-  padding: 3px 12px;
+  padding: 4px 16px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
 }
 .lifestyle-card-title {
-  font-size: 18px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 19px;
   font-weight: 700;
   color: #1e1e1e;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   line-height: 1.4;
 }
 .lifestyle-card-desc {
   font-size: 14px;
   color: #555;
-  line-height: 1.7;
+  line-height: 1.8;
+}
+.lifestyle-card-desc strong {
+  color: #e24a66;
+  font-size: 18px;
+  font-weight: 800;
+}
+/* --- sitting info cards --- */
+.sitting-info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.sitting-info-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 2px 12px rgba(226, 74, 102, 0.06);
+  border: 1.5px solid #fce4d6;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.sitting-info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(226, 74, 102, 0.1);
+}
+.sitting-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff5ed, #fce4d6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sitting-info-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: #e24a66;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sitting-info-content {
+  flex: 1;
+}
+.sitting-info-label {
+  display: inline-block;
+  background: linear-gradient(135deg, #f7a94b, #e24a66);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.sitting-info-text {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* ===== VOICE / TESTIMONIALS ===== */
@@ -1120,6 +1214,9 @@ ul { list-style: none; }
   .income-image .income-range .number { font-size: 48px; }
 
   .lifestyle-cards { grid-template-columns: 1fr; }
+  .sitting-info-cards { grid-template-columns: 1fr; }
+  .lifestyle-card-photo { height: 120px; }
+  .lifestyle-card-photo svg { width: 56px; height: 56px; }
 
   .safety-grid { grid-template-columns: 1fr 1fr; }
 
@@ -1348,7 +1445,17 @@ ul { list-style: none; }
     </div>
     <div class="lifestyle-cards">
       <div class="lifestyle-card">
-        <div class="lifestyle-card-photo">&#x1F6B6;</div>
+        <div class="lifestyle-card-photo">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#e24a66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="16" r="7"/>
+            <path d="M22 56V40a10 10 0 0 1 20 0v16"/>
+            <path d="M22 40l-6 8m26-8l6 8"/>
+            <path d="M28 56l-4-10m12 10l4-10"/>
+            <path d="M44 28c4 0 8 2 8 6v4h-6m-28-10c-4 0-8 2-8 6v4h6"/>
+            <circle cx="50" cy="20" r="5"/>
+            <circle cx="14" cy="20" r="5"/>
+          </svg>
+        </div>
         <div class="lifestyle-card-body">
           <span class="lifestyle-card-tag">ケース1</span>
           <h3 class="lifestyle-card-title">4歳児の送迎（1時間）</h3>
@@ -1356,7 +1463,19 @@ ul { list-style: none; }
         </div>
       </div>
       <div class="lifestyle-card">
-        <div class="lifestyle-card-photo">&#x1F476;</div>
+        <div class="lifestyle-card-photo">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#f7a94b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="18" r="9"/>
+            <path d="M23 14c-1-4 0-8 4-10m18 10c1-4 0-8-4-10"/>
+            <path d="M20 50c0-8 5-14 12-14s12 6 12 14"/>
+            <path d="M28 25a3 3 0 0 0 0 4m8-4a3 3 0 0 1 0 4"/>
+            <path d="M26 44v8m12-8v8"/>
+            <circle cx="29" cy="19" r="1.5" fill="#f7a94b" stroke="none"/>
+            <circle cx="35" cy="19" r="1.5" fill="#f7a94b" stroke="none"/>
+            <path d="M30 23q2 2 4 0"/>
+            <path d="M16 52h32"/>
+          </svg>
+        </div>
         <div class="lifestyle-card-body">
           <span class="lifestyle-card-tag">ケース2</span>
           <h3 class="lifestyle-card-title">2〜5歳兄弟のシッティング（5時間）</h3>
@@ -1364,32 +1483,44 @@ ul { list-style: none; }
         </div>
       </div>
     </div>
-    <div class="section-heading" style="margin-top:40px;">
+    <div class="section-heading" style="margin-top:50px;">
       <h2>対応可能なシッティング内容</h2>
     </div>
-    <div class="lifestyle-cards">
-      <div class="lifestyle-card">
-        <div class="lifestyle-card-body">
-          <span class="lifestyle-card-tag">対象年齢</span>
-          <p class="lifestyle-card-desc">0〜18歳未満</p>
+    <div class="sitting-info-cards">
+      <div class="sitting-info-card">
+        <div class="sitting-info-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-4 3-7 7-7s7 3 7 7"/><path d="M2 20h20"/></svg>
+        </div>
+        <div class="sitting-info-content">
+          <span class="sitting-info-label">対象年齢</span>
+          <p class="sitting-info-text">0〜18歳未満</p>
         </div>
       </div>
-      <div class="lifestyle-card">
-        <div class="lifestyle-card-body">
-          <span class="lifestyle-card-tag">シッティング時間</span>
-          <p class="lifestyle-card-desc">1時間〜（15分単位）</p>
+      <div class="sitting-info-card">
+        <div class="sitting-info-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div class="sitting-info-content">
+          <span class="sitting-info-label">シッティング時間</span>
+          <p class="sitting-info-text">1時間〜（15分単位）</p>
         </div>
       </div>
-      <div class="lifestyle-card">
-        <div class="lifestyle-card-body">
-          <span class="lifestyle-card-tag">対応人数</span>
-          <p class="lifestyle-card-desc">最大3人まで</p>
+      <div class="sitting-info-card">
+        <div class="sitting-info-icon">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M15 14c3 0 5.5 1.5 5.5 4"/></svg>
+        </div>
+        <div class="sitting-info-content">
+          <span class="sitting-info-label">対応人数</span>
+          <p class="sitting-info-text">最大3人まで</p>
         </div>
       </div>
-      <div class="lifestyle-card">
-        <div class="lifestyle-card-body">
-          <span class="lifestyle-card-tag">サービス内容</span>
-          <p class="lifestyle-card-desc">個別保育、送迎、病児・病後児保育、障がい児保育、保けいこ（習い事付き添い）、家庭教師、簡単な家事</p>
+      <div class="sitting-info-card">
+        <div class="sitting-info-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/><path d="M13 13l2 2 3-4"/></svg>
+        </div>
+        <div class="sitting-info-content">
+          <span class="sitting-info-label">サービス内容</span>
+          <p class="sitting-info-text">個別保育、送迎、病児・病後児保育、障がい児保育、保けいこ（習い事付き添い）、家庭教師、簡単な家事</p>
         </div>
       </div>
     </div>
