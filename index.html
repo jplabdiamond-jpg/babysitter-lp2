@@ -1453,6 +1453,18 @@ ul { list-style: none; }
 .anim-delay-3 { animation-delay: 0.3s; }
 .anim-delay-4 { animation-delay: 0.4s; }
 
+@keyframes heroBounce {
+  0%   { opacity: 0; transform: scale(0.3); }
+  25%  { opacity: 1; transform: scale(1.1); }
+  40%  { transform: scale(0.75); }
+  65%  { transform: scale(1.08); }
+  80%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+.hero-text-overlay img {
+  animation: heroBounce 1s ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .anim-ready { opacity: 1; }
   .anim-scale, .anim-left, .anim-right, .anim-up { animation: none; opacity: 1; transform: none; }
