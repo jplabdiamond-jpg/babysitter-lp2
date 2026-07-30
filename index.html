@@ -1389,7 +1389,7 @@ ul { list-style: none; }
   .hero {
     height: auto;
     max-height: none;
-    background: url('mob_site2_hero1.png') center top / cover no-repeat;
+    background: url('mob_site2_hero1.webp') center top / cover no-repeat;
     aspect-ratio: 3 / 4;
     display: flex;
     flex-direction: column;
@@ -1486,23 +1486,27 @@ ul { list-style: none; }
 
   .stats-number { font-size: 72px; }
 
-  .cta-wrap { margin-top: 15px; }
-  .cta-wrap { padding: 0 16px 30px; }
+  .merit-section,
+  .voice-section { padding-left: 16px !important; padding-right: 16px !important; }
+
+  .cta-wrap { margin-top: 15px; padding: 0 0 30px !important; }
   .cta-btn {
-    display: flex;
-    padding: 14px 28px;
+    display: flex !important;
+    padding: 14px 20px !important;
     position: relative;
-    margin-top: 20px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 340px;
-    border-radius: 40px;
+    margin: 20px auto 0 !important;
+    font-size: 15px !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 340px !important;
+    border-radius: 30px !important;
     gap: 8px;
     overflow: visible;
     justify-content: center;
+    box-sizing: border-box;
   }
-  .cta-btn .cta-main-text { white-space: nowrap; font-size: 15px; }
-  .cta-btn .cta-arrow { display: none; }
+  .cta-btn .cta-main-text { white-space: nowrap; font-size: 15px !important; }
+  .cta-btn .cta-arrow { display: none !important; }
+  .cta-btn .cta-text-wrap { align-items: center; }
   .cta-btn .cta-sub-text {
     display: block;
     position: absolute;
@@ -1699,7 +1703,7 @@ ul { list-style: none; }
 <!-- ===== RECRUIT BANNER + CTA ===== -->
 <div class="recruit-cta-wrapper">
 <section class="recruit-banner">
-  <img src="section2_sitter_recruit_transparent3.webp" alt="新人シッターさん大募集！週1〜フルタイムまで選べる・保育資格なしでもOK・実質時給2,000円〜も可・当日空いている時間でも働ける">
+  <img loading="lazy" src="section2_sitter_recruit_transparent3.webp" alt="新人シッターさん大募集！週1〜フルタイムまで選べる・保育資格なしでもOK・実質時給2,000円〜も可・当日空いている時間でも働ける">
 </section>
 
 <div class="cta-wrap">
@@ -1752,10 +1756,10 @@ ul { list-style: none; }
 <section class="lead-section">
   <img loading="lazy" src="babysitter_lp_framed.webp" alt="「子どもが好き！」を活かして子育て家庭のサポートを仕事にしませんか?" style="max-width:100%;width:700px;height:auto;margin-bottom:30px;display:block;margin-left:auto;margin-right:auto;">
   <ul class="lead-list">
-    <li><span class="check-icon"><img src="check.webp" alt="✓"></span><span><span class="pink">自分のペース</span>で時間設定が可能</span></li>
-    <li><span class="check-icon"><img src="check.webp" alt="✓"></span><span><span class="pink">時給1,500円〜</span>自由に設定、月収5万〜40万円以上も</span></li>
-    <li><span class="check-icon"><img src="check.webp" alt="✓"></span><span>仲介手数料は<span class="pink">ご購入金額の5%＋税</span></span></li>
-    <li><span class="check-icon"><img src="check.webp" alt="✓"></span><span>最大<span class="pink">5億円</span>の賠償責任保険で安心</span></li>
+    <li><span class="check-icon"><img loading="lazy" src="check.webp" alt="✓"></span><span><span class="pink">自分のペース</span>で時間設定が可能</span></li>
+    <li><span class="check-icon"><img loading="lazy" src="check.webp" alt="✓"></span><span><span class="pink">時給1,500円〜</span>自由に設定、月収5万〜40万円以上も</span></li>
+    <li><span class="check-icon"><img loading="lazy" src="check.webp" alt="✓"></span><span>仲介手数料は<span class="pink">ご購入金額の5%＋税</span></span></li>
+    <li><span class="check-icon"><img loading="lazy" src="check.webp" alt="✓"></span><span>最大<span class="pink">5億円</span>の賠償責任保険で安心</span></li>
   </ul>
 </section>
 
