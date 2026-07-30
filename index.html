@@ -1406,11 +1406,27 @@ ul { list-style: none; }
     transform: none;
     width: 100%;
     text-align: center;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 16px;
+    background: none;
     padding: 8px 4px;
+  }
+  .hero-mob-text::before,
+  .hero-mob-badges::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130%;
+    height: 160%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse 50% 42%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 35%, rgba(255,255,255,0.35) 60%, rgba(255,255,255,0.1) 80%, transparent 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-mob-text img,
+  .hero-mob-badges img {
+    position: relative;
+    z-index: 1;
   }
   .hero-mob-text img {
     width: 105%;
