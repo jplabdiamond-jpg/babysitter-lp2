@@ -452,40 +452,40 @@ ul { list-style: none; }
   gap: 20px;
 }
 .heading-mascot {
-  width: 120px;
+  width: 144px;
   height: auto;
   flex-shrink: 0;
 }
 .heading-mascot-left { transform: rotate(-5deg); }
 .heading-mascot-right { transform: rotate(5deg); }
 
-/* POINT1 background photo */
-.merit-card-with-photo {
-  position: relative;
+/* POINT1 photo layout */
+.merit-card-with-photo .merit-title {
+  margin-bottom: 24px;
+}
+.merit-card-photo-layout {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+.merit-card-photo-layout .merit-photo-img {
+  flex: 0 0 45%;
+  border-radius: 16px;
   overflow: hidden;
-  min-height: 320px;
+  margin-left: -20px;
 }
-.merit-card-bg-photo {
-  position: absolute;
-  left: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 110%;
-  width: auto;
+.merit-card-photo-layout .merit-photo-img img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: 0;
+  object-position: right center;
+  display: block;
 }
-.merit-card-with-photo .point-badge,
-.merit-card-with-photo .merit-title,
-.merit-card-with-photo .merit-content,
-.merit-card-with-photo .merit-desc {
-  position: relative;
-  z-index: 1;
-}
-.merit-card-with-photo .merit-photo {
-  display: none;
+.merit-card-photo-layout .merit-photo-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ===== MERIT CARDS ===== */
@@ -1108,9 +1108,11 @@ ul { list-style: none; }
   .merit-card { padding: 30px 20px; }
   .merit-card .merit-title { font-size: 22px; }
   .section-heading h2 { font-size: 28px; }
-  .heading-mascot { width: 70px; }
+  .heading-mascot { width: 84px; }
   .heading-with-mascots { gap: 10px; }
-  .merit-card-bg-photo { left: -80px; opacity: 0.12; }
+  .merit-card-photo-layout { flex-direction: column; }
+  .merit-card-photo-layout .merit-photo-img { flex: none; margin-left: 0; max-height: 220px; }
+  .merit-card-with-photo .merit-title { font-size: 20px; }
   .merit-card .merit-content { flex-direction: column; }
   .merit-card .merit-photo { flex: none; width: 100%; height: 180px; }
   .merit-card .merit-points li { font-size: 15px; }
@@ -1250,17 +1252,20 @@ ul { list-style: none; }
     <!-- POINT 1: 柔軟なスケジュール -->
     <article class="merit-card merit-card-with-photo">
       <div class="point-badge"><span class="point-label">POINT</span><span class="point-number">1</span></div>
-      <img src="babysitter_with_text.png" alt="自分のペースでお仕事OK！空いた時間を有効活用！" class="merit-card-bg-photo">
-      <h3 class="merit-title">柔軟なスケジュール<br>自分のペースで働ける</h3>
-      <div class="merit-content">
-        <div class="merit-photo" style="visibility:hidden;"></div>
-        <ul class="merit-points">
-          <li><span class="merit-check">&#x2714;</span>自分のペースで時間設定が可能</li>
-          <li><span class="merit-check">&#x2714;</span>シッティング時間は1時間〜（15分単位）</li>
-          <li><span class="merit-check">&#x2714;</span>依頼の諾否は自由意思</li>
-        </ul>
+      <h3 class="merit-title">柔軟なスケジュール ― 自分のペースで働ける</h3>
+      <div class="merit-card-photo-layout">
+        <div class="merit-photo-img">
+          <img src="babysitter_with_text.png" alt="自分のペースでお仕事OK！空いた時間を有効活用！">
+        </div>
+        <div class="merit-photo-right">
+          <ul class="merit-points">
+            <li><span class="merit-check">&#x2714;</span>自分のペースで時間設定が可能</li>
+            <li><span class="merit-check">&#x2714;</span>シッティング時間は1時間〜（15分単位）</li>
+            <li><span class="merit-check">&#x2714;</span>依頼の諾否は自由意思</li>
+          </ul>
+          <p class="merit-desc">ベビ&#x2661;ママは<span class="pink">個人契約型マッチングサービス</span>。保護者とシッター間の直接契約なので、契約条件・料金はシッターが個別に設定できます。自分のライフスタイルに合わせた柔軟な働き方が可能です。</p>
+        </div>
       </div>
-      <p class="merit-desc">ベビ&#x2661;ママは<span class="pink">個人契約型マッチングサービス</span>。保護者とシッター間の直接契約なので、契約条件・料金はシッターが個別に設定できます。自分のライフスタイルに合わせた柔軟な働き方が可能です。</p>
     </article>
 
     <!-- POINT 2: 時給設定自由 -->
