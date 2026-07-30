@@ -1000,8 +1000,24 @@ ul { list-style: none; }
   border: 1px solid #f0e0d0;
 }
 .safety-icon {
-  font-size: 50px;
-  margin-bottom: 15px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff5ed 0%, #fce4d6 50%, #fdd6c8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(247, 169, 75, 0.15);
+}
+.safety-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #e24a66;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .safety-title {
   font-size: 16px;
@@ -1698,22 +1714,30 @@ ul { list-style: none; }
     </div>
     <div class="safety-grid">
       <div class="safety-card">
-        <div class="safety-icon">&#x1F6E1;</div>
+        <div class="safety-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 6.5 8 11 8 11s8-4.5 8-11V6l-8-4z"/><path d="M9 12l2 2 4-4" stroke-width="2.2"/></svg>
+        </div>
         <h3 class="safety-title">賠償責任保険完備</h3>
         <p class="safety-desc">対人・対物賠償1事故5億円。受託財物補償1事故1,000万円。人格権侵害補償1名100万円。</p>
       </div>
       <div class="safety-card">
-        <div class="safety-icon">&#x1F4CB;</div>
+        <div class="safety-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 2h6v3H9z"/><rect x="5" y="5" width="14" height="17" rx="2"/><path d="M9 10h6m-6 4h4"/></svg>
+        </div>
         <h3 class="safety-title">傷害総合保険</h3>
         <p class="safety-desc">賠償責任保険に加え、傷害総合保険にも別途加入しています。</p>
       </div>
       <div class="safety-card">
-        <div class="safety-icon">&#x1F4DA;</div>
+        <div class="safety-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M12 3v4h4"/><path d="M8 13h8m-8 3h5"/></svg>
+        </div>
         <h3 class="safety-title">初回研修制度</h3>
         <p class="safety-desc">約1.5時間の研修でマナー、当日の流れ、注意ポイント、コミュニケーション、セキュリティを学びます。</p>
       </div>
       <div class="safety-card">
-        <div class="safety-icon">&#x1F91D;</div>
+        <div class="safety-icon">
+          <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="8" r="4"/><path d="M2 20c0-3 2.5-5 6-5 1.2 0 2.3.3 3.2.8M22 20c0-3-2.5-5-6-5-1.2 0-2.3.3-3.2.8"/><path d="M10 16l2 2 2-2"/></svg>
+        </div>
         <h3 class="safety-title">運営サポート</h3>
         <p class="safety-desc">シッター業界を熟知した運営担当者が企画・運営。トラブル時も運営担当者がサポートします。</p>
       </div>
