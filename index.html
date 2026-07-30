@@ -1266,11 +1266,17 @@ ul { list-style: none; }
   margin-bottom: 30px;
   color: #e24a66;
 }
-.area-list {
+.area-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.area-col {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
-  justify-content: center;
 }
 .area-tag {
   background: #fff;
@@ -1368,10 +1374,11 @@ ul { list-style: none; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .header { height: 60px; padding: 0 15px; }
-  .header-logo img { height: 55px; }
-  .header-nav a .nav-text { display: none; }
-  .header-nav .btn-header-cta { padding: 9px 21px; font-size: 18px; }
+  .header { height: 56px; padding: 0 12px; }
+  .header-logo img { height: 48px; }
+  .header-nav { gap: 0; }
+  .header-nav > a:not(.btn-header-cta) { display: none; }
+  .header-nav .btn-header-cta { padding: 7px 16px; font-size: 14px; }
 
 
 
@@ -1386,11 +1393,11 @@ ul { list-style: none; }
   .lead-list li { font-size: 18px; }
   .lead-list li .check-icon { width: 40px; height: 40px; }
 
-  .merit-card { padding: 30px 20px; }
-  .merit-card .point-badge { width: 60px; height: 60px; }
-  .merit-card .point-badge .point-number { font-size: 24px; }
-  .merit-card .point-badge .point-label { font-size: 10px; }
-  .merit-card .merit-title { font-size: 20px; padding-top: 40px; }
+  .merit-card { padding: 20px 20px 30px; }
+  .merit-card .point-badge { width: 56px; height: 56px; }
+  .merit-card .point-badge .point-number { font-size: 22px; }
+  .merit-card .point-badge .point-label { font-size: 9px; }
+  .merit-card .merit-title { font-size: 19px; padding-top: 42px; }
   .section-heading h2 { font-size: 28px; }
   .heading-mascot { width: 84px; }
   .heading-icon { width: 36px; height: 36px; }
@@ -1420,11 +1427,47 @@ ul { list-style: none; }
 
   .stats-number { font-size: 72px; }
 
-  .cta-btn { padding: 15px 20px; }
-  .cta-btn .cta-main-text { white-space: normal; }
+  .cta-wrap { margin-top: 15px; }
+  .cta-btn { padding: 12px 20px; position: relative; margin-top: 20px; }
+  .cta-btn .cta-main-text { white-space: normal; font-size: 18px; }
+  .cta-btn .cta-sub-text {
+    display: block;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    font-weight: 700;
+    color: #e24a66;
+    opacity: 1;
+    white-space: nowrap;
+  }
+  .cta-btn .free-badge {
+    background: none;
+    color: #fff;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    font-size: 20px;
+    font-weight: 900;
+    transform: rotate(-8deg);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
   .floating-cta { display: block; }
-  .floating-cta .cta-btn { padding: 12px 15px; }
-  .back-to-top { bottom: 80px; }
+  .floating-cta .cta-btn { padding: 10px 15px; }
+  .floating-cta .cta-btn .free-badge {
+    width: auto;
+    height: auto;
+    background: none;
+    color: #fff;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: 900;
+    transform: rotate(-8deg);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    white-space: nowrap;
+  }
+  .back-to-top { bottom: 70px; }
 
   .section-heading h2 { font-size: 24px; }
 }
@@ -2110,11 +2153,15 @@ ul { list-style: none; }
 <section class="area-section">
   <div class="area-inner">
     <h2 class="area-heading">対応エリア</h2>
-    <div class="area-list">
-      <span class="area-tag">東京都</span>
-      <span class="area-tag">埼玉県</span>
-      <span class="area-tag">千葉県</span>
-      <span class="area-tag">神奈川県</span>
+    <div class="area-grid">
+      <div class="area-col">
+        <span class="area-tag">東京都</span>
+        <span class="area-tag">埼玉県</span>
+      </div>
+      <div class="area-col">
+        <span class="area-tag">千葉県</span>
+        <span class="area-tag">神奈川県</span>
+      </div>
     </div>
   </div>
 </section>
