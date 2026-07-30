@@ -1286,7 +1286,7 @@ ul { list-style: none; }
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(135deg, #f7a94b 0%, #f0864a 30%, #e8604e 60%, #e24a66 100%);
+  background: linear-gradient(180deg, #fd5e63 0%, #e24a66 50%, #c7354d 100%);
   color: #fff;
   padding: 40px 30px;
   text-align: center;
@@ -1489,7 +1489,7 @@ ul { list-style: none; }
   70%  { transform: scale(0.95) rotate(-1deg); }
   100% { transform: scale(1) rotate(0); }
 }
-.lead-list li {
+.lead-list li.anim-burst-ready {
   opacity: 0;
 }
 .lead-list li.anim-burst {
@@ -1539,7 +1539,7 @@ ul { list-style: none; }
   .anim-ready { opacity: 1; }
   .anim-scale, .anim-left, .anim-right, .anim-up { animation: none; opacity: 1; transform: none; }
   .anim-pulse { animation: none; }
-  .lead-list li { opacity: 1; }
+  .lead-list li.anim-burst-ready { opacity: 1; }
   .lead-list li.anim-burst { animation: none; opacity: 1; transform: none; }
   .highlight-pen { background-size: 100% 40%; }
   .highlight-pen.anim-highlight { animation: none; }
@@ -2254,19 +2254,22 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   document.querySelectorAll('.anim-ready').forEach(el => observer.observe(el));
 
   // Lead list: burst animation with stagger
-  const burstObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      burstObserver.unobserve(entry.target);
-      const items = entry.target.querySelectorAll('li');
-      items.forEach((li, i) => {
-        li.style.animationDelay = (i * 0.15) + 's';
-        li.classList.add('anim-burst');
-      });
-    });
-  }, { threshold: 0.1 });
   const leadList = document.querySelector('.lead-list');
-  if (leadList) burstObserver.observe(leadList);
+  if (leadList) {
+    var leadItems = leadList.querySelectorAll('li');
+    leadItems.forEach(function(li){ li.classList.add('anim-burst-ready'); });
+    var burstObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        burstObserver.unobserve(entry.target);
+        leadItems.forEach(function(li, i) {
+          li.style.animationDelay = (i * 0.15) + 's';
+          li.classList.add('anim-burst');
+        });
+      });
+    }, { threshold: 0.05 });
+    burstObserver.observe(leadList);
+  }
 
   // Highlighter pen: trigger when merit-card becomes visible
   const highlightObserver = new IntersectionObserver((entries) => {
