@@ -1515,20 +1515,22 @@ ul { list-style: none; }
 .anim-nav-left { animation: slideFromLeft 1s ease-out forwards; }
 .anim-nav-right { animation: slideFromRight 1s ease-out forwards; }
 
-/* Mascot bounce from sides */
-@keyframes bounceFromLeft {
-  0%   { opacity: 0; transform: translateX(-80px) rotate(-15deg); }
-  40%  { opacity: 1; transform: translateX(15px) rotate(5deg); }
-  60%  { transform: translateX(-8px) rotate(-3deg); }
-  80%  { transform: translateX(4px) rotate(1deg); }
-  100% { transform: translateX(0) rotate(-5deg); }
+/* Mascot pop: 120% → 100% */
+@keyframes mascotPopLeft {
+  0%   { transform: scale(1) rotate(-5deg); }
+  50%  { transform: scale(1.2) rotate(-5deg); }
+  100% { transform: scale(1) rotate(-5deg); }
 }
-@keyframes bounceFromRight {
-  0%   { opacity: 0; transform: translateX(80px) rotate(15deg); }
-  40%  { opacity: 1; transform: translateX(-15px) rotate(-5deg); }
-  60%  { transform: translateX(8px) rotate(3deg); }
-  80%  { transform: translateX(-4px) rotate(-1deg); }
-  100% { transform: translateX(0) rotate(5deg); }
+@keyframes mascotPopRight {
+  0%   { transform: scale(1) rotate(5deg); }
+  50%  { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1) rotate(5deg); }
+}
+.heading-mascot-left {
+  animation: mascotPopLeft 1s ease-in-out 1s both;
+}
+.heading-mascot-right {
+  animation: mascotPopRight 1s ease-in-out 1s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
