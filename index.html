@@ -1418,6 +1418,46 @@ ul { list-style: none; }
 
   .section-heading h2 { font-size: 24px; }
 }
+
+/* ===== SCROLL ANIMATIONS ===== */
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseBtn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.anim-ready { opacity: 0; }
+.anim-scale { animation: scaleUp 0.7s ease-out forwards; }
+.anim-left { animation: slideFromLeft 0.65s ease-out forwards; }
+.anim-right { animation: slideFromRight 0.65s ease-out forwards; }
+.anim-up { animation: fadeSlideUp 0.65s ease-out forwards; }
+.anim-pulse { animation: pulseBtn 2s ease-in-out infinite; }
+
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.2s; }
+.anim-delay-3 { animation-delay: 0.3s; }
+.anim-delay-4 { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-ready { opacity: 1; }
+  .anim-scale, .anim-left, .anim-right, .anim-up { animation: none; opacity: 1; transform: none; }
+  .anim-pulse { animation: none; }
+}
 </style>
 </head>
 <body>
@@ -2026,6 +2066,91 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// ===== SCROLL ANIMATIONS =====
+(function(){
+  // Images (standalone, not inside cards): scale up
+  const standaloneImgs = document.querySelectorAll(
+    '.lead-section > img, .heading-mascot, .section-heading img'
+  );
+  standaloneImgs.forEach(el => el.classList.add('anim-ready'));
+
+  // CTA buttons: pulse
+  document.querySelectorAll('.cta-btn').forEach(el => el.classList.add('anim-ready'));
+
+  // Cards in 2-column grids: left/right slide
+  const gridCards = [
+    { sel: '.lifestyle-cards > .lifestyle-card', cols: 2 },
+    { sel: '.sitting-info-cards > .sitting-info-card', cols: 4 },
+    { sel: '.safety-grid > .safety-card', cols: 4 },
+    { sel: '.flow-steps > .flow-step', cols: 3 },
+    { sel: '.section-nav-grid > .section-nav-item', cols: 4 }
+  ];
+  gridCards.forEach(g => {
+    document.querySelectorAll(g.sel).forEach((el, i) => {
+      el.classList.add('anim-ready');
+      el.dataset.animIdx = i;
+      el.dataset.animCols = g.cols;
+    });
+  });
+
+  // Single-column cards: fade up
+  const singleCards = document.querySelectorAll(
+    '.merit-card, .voice-card-group, .faq-item, .req-box, .section-nav-full .section-nav-item'
+  );
+  singleCards.forEach((el, i) => {
+    el.classList.add('anim-ready');
+    el.dataset.animType = 'up';
+  });
+
+  const isMobile = () => window.innerWidth <= 768;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      observer.unobserve(el);
+
+      // Standalone images: scale up
+      if (el.matches('.lead-section > img, .heading-mascot, .section-heading img')) {
+        el.classList.add('anim-scale');
+        return;
+      }
+
+      // CTA buttons: pulse
+      if (el.matches('.cta-btn')) {
+        el.classList.add('anim-pulse');
+        return;
+      }
+
+      // Single-column items: fade up
+      if (el.dataset.animType === 'up') {
+        el.classList.add('anim-up');
+        return;
+      }
+
+      // Grid cards
+      const idx = parseInt(el.dataset.animIdx || 0);
+      const cols = parseInt(el.dataset.animCols || 2);
+
+      if (isMobile() && (cols > 1)) {
+        // Mobile: 1-column layout, slide up
+        el.classList.add('anim-up');
+      } else {
+        // Desktop: alternate left/right
+        const col = idx % cols;
+        const half = Math.floor(cols / 2);
+        el.classList.add(col < half ? 'anim-left' : 'anim-right');
+      }
+
+      // Stagger delay
+      const delay = idx % cols;
+      if (delay > 0 && delay <= 4) el.classList.add('anim-delay-' + delay);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.anim-ready').forEach(el => observer.observe(el));
+})();
 </script>
 </div><!-- /.page-wrapper -->
 </body>
