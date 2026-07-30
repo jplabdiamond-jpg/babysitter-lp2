@@ -1530,9 +1530,6 @@ ul { list-style: none; }
   80%  { transform: translateX(-4px) rotate(-1deg); }
   100% { transform: translateX(0) rotate(5deg); }
 }
-.heading-mascot { opacity: 0; }
-.heading-mascot.anim-bounce-left { animation: bounceFromLeft 0.8s ease-out forwards; }
-.heading-mascot.anim-bounce-right { animation: bounceFromRight 0.8s ease-out forwards; }
 
 @media (prefers-reduced-motion: reduce) {
   .anim-ready { opacity: 1; }
@@ -1540,8 +1537,6 @@ ul { list-style: none; }
   .anim-pulse { animation: none; }
   .highlight-pen { background-size: 100% 40%; }
   .highlight-pen.anim-highlight { animation: none; }
-  .heading-mascot { opacity: 1; }
-  .heading-mascot.anim-bounce-left, .heading-mascot.anim-bounce-right { animation: none; opacity: 1; transform: none; }
   .hero-text-overlay img { animation: none; opacity: 1; transform: none; }
   .recruit-banner img, .lead-section > img { animation: none; opacity: 1; transform: scale(1.15); }
   .lead-list li { opacity: 1 !important; transform: none !important; }
@@ -2279,19 +2274,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (card.querySelector('.highlight-pen')) highlightObserver.observe(card);
   });
 
-  // Mascot bounce: left/right
-  const mascotObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      mascotObserver.unobserve(entry.target);
-      if (entry.target.classList.contains('heading-mascot-left')) {
-        entry.target.classList.add('anim-bounce-left');
-      } else {
-        entry.target.classList.add('anim-bounce-right');
-      }
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.heading-mascot').forEach(el => mascotObserver.observe(el));
 })();
 </script>
 </div><!-- /.page-wrapper -->
