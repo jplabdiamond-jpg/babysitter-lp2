@@ -1354,14 +1354,16 @@ ul { list-style: none; }
 }
 .floating-cta .cta-btn {
   font-size: 18px;
-  padding: 14px 30px;
+  padding: 14px 20px 14px 30px;
   width: 100%;
   max-width: 400px;
+  overflow: visible;
 }
 .floating-cta .cta-btn .free-badge {
-  width: 38px;
-  height: 38px;
-  font-size: 13px;
+  width: 42px;
+  height: 42px;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1385,7 +1387,10 @@ ul { list-style: none; }
   .lead-list li .check-icon { width: 40px; height: 40px; }
 
   .merit-card { padding: 30px 20px; }
-  .merit-card .merit-title { font-size: 22px; }
+  .merit-card .point-badge { width: 60px; height: 60px; }
+  .merit-card .point-badge .point-number { font-size: 24px; }
+  .merit-card .point-badge .point-label { font-size: 10px; }
+  .merit-card .merit-title { font-size: 20px; padding-top: 40px; }
   .section-heading h2 { font-size: 28px; }
   .heading-mascot { width: 84px; }
   .heading-icon { width: 36px; height: 36px; }
