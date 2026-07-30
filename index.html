@@ -1359,9 +1359,9 @@ ul { list-style: none; }
   max-width: 400px;
 }
 .floating-cta .cta-btn .free-badge {
-  width: 44px;
-  height: 44px;
-  font-size: 14px;
+  width: 38px;
+  height: 38px;
+  font-size: 13px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1457,6 +1457,13 @@ ul { list-style: none; }
 .anim-delay-2 { animation-delay: 0.2s; }
 .anim-delay-3 { animation-delay: 0.3s; }
 .anim-delay-4 { animation-delay: 0.4s; }
+
+/* Mobile: elements always visible, animations are cosmetic only */
+@media (max-width: 768px) {
+  .anim-ready { opacity: 1 !important; }
+  .lead-list li { opacity: 1 !important; transform: none !important; }
+  .lead-list li.anim-lead-up { animation: none; }
+}
 
 @keyframes heroBounce {
   0%    { opacity: 0; transform: scale(0.3); }
