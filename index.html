@@ -671,13 +671,19 @@ ul { list-style: none; }
 }
 .lifestyle-card:hover::after { opacity: 1; }
 .lifestyle-card-photo {
-  height: 140px;
+  height: 200px;
   background: linear-gradient(135deg, #fff5ed 0%, #fce4d6 50%, #fdd6c8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 60px;
   position: relative;
+  overflow: hidden;
+}
+.lifestyle-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .lifestyle-card-photo svg {
   width: 72px;
@@ -1446,15 +1452,7 @@ ul { list-style: none; }
     <div class="lifestyle-cards">
       <div class="lifestyle-card">
         <div class="lifestyle-card-photo">
-          <svg viewBox="0 0 64 64" fill="none" stroke="#e24a66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="32" cy="16" r="7"/>
-            <path d="M22 56V40a10 10 0 0 1 20 0v16"/>
-            <path d="M22 40l-6 8m26-8l6 8"/>
-            <path d="M28 56l-4-10m12 10l4-10"/>
-            <path d="M44 28c4 0 8 2 8 6v4h-6m-28-10c-4 0-8 2-8 6v4h6"/>
-            <circle cx="50" cy="20" r="5"/>
-            <circle cx="14" cy="20" r="5"/>
-          </svg>
+          <img src="babysitter_pick_up_scene.png" alt="4歳児の送迎シーン">
         </div>
         <div class="lifestyle-card-body">
           <span class="lifestyle-card-tag">ケース1</span>
@@ -1464,17 +1462,7 @@ ul { list-style: none; }
       </div>
       <div class="lifestyle-card">
         <div class="lifestyle-card-photo">
-          <svg viewBox="0 0 64 64" fill="none" stroke="#f7a94b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="32" cy="18" r="9"/>
-            <path d="M23 14c-1-4 0-8 4-10m18 10c1-4 0-8-4-10"/>
-            <path d="M20 50c0-8 5-14 12-14s12 6 12 14"/>
-            <path d="M28 25a3 3 0 0 0 0 4m8-4a3 3 0 0 1 0 4"/>
-            <path d="M26 44v8m12-8v8"/>
-            <circle cx="29" cy="19" r="1.5" fill="#f7a94b" stroke="none"/>
-            <circle cx="35" cy="19" r="1.5" fill="#f7a94b" stroke="none"/>
-            <path d="M30 23q2 2 4 0"/>
-            <path d="M16 52h32"/>
-          </svg>
+          <img src="babysitter_playing_with_two_boys.png" alt="兄弟のシッティングシーン">
         </div>
         <div class="lifestyle-card-body">
           <span class="lifestyle-card-tag">ケース2</span>
