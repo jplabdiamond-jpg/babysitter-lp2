@@ -2075,8 +2075,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   );
   standaloneImgs.forEach(el => el.classList.add('anim-ready'));
 
-  // CTA buttons: pulse
-  document.querySelectorAll('.cta-btn').forEach(el => el.classList.add('anim-ready'));
+  // CTA buttons: pulse (always visible, no anim-ready/opacity:0)
+  document.querySelectorAll('.cta-btn').forEach(el => el.classList.add('anim-pulse'));
 
   // Cards in 2-column grids: left/right slide
   const gridCards = [
@@ -2117,11 +2117,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         return;
       }
 
-      // CTA buttons: pulse
-      if (el.matches('.cta-btn')) {
-        el.classList.add('anim-pulse');
-        return;
-      }
 
       // Single-column items: fade up
       if (el.dataset.animType === 'up') {
