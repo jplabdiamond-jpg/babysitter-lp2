@@ -872,6 +872,95 @@ ul { list-style: none; }
   text-align: left;
 }
 
+/* ===== VOICE CARD WITH FACE ===== */
+.voice-card-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  max-width: 740px;
+  margin: 0 auto 32px;
+}
+.voice-face {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.voice-face::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f7a94b, #e24a66);
+  z-index: 0;
+}
+.voice-face::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 2px dashed rgba(247, 169, 75, 0.35);
+  z-index: 0;
+}
+.voice-face img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 3px solid #fff;
+}
+.review-card {
+  flex: 1;
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 18px rgba(226, 74, 102, 0.08), 0 1px 4px rgba(0,0,0,0.03);
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.review-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(90deg, #f7a94b, #e24a66);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(226, 74, 102, 0.13);
+}
+.review-card:hover::before { opacity: 1; }
+.review-card .review-author {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e24a66;
+  margin-bottom: 10px;
+}
+.review-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 0;
+}
+.review-stars {
+  color: #f7a94b;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.review-author {
+  font-size: 13px;
+  color: #888;
+}
+
 /* ===== REVIEWS CAROUSEL ===== */
 .reviews-section {
   padding: 80px 30px;
@@ -887,29 +976,6 @@ ul { list-style: none; }
   overflow-x: auto;
   padding: 20px 0;
   -webkit-overflow-scrolling: touch;
-}
-.review-card {
-  flex: 0 0 280px;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.review-stars {
-  color: #f7a94b;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.review-text {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 15px;
-}
-.review-author {
-  font-size: 13px;
-  color: #888;
 }
 
 /* ===== SAFETY (4つの安心) ===== */
@@ -1275,6 +1341,8 @@ ul { list-style: none; }
 
   .lifestyle-cards { grid-template-columns: 1fr; }
   .sitting-info-cards { grid-template-columns: 1fr; }
+  .voice-card-group { flex-direction: column; text-align: center; gap: 16px; }
+  .voice-face { width: 80px; height: 80px; }
   .lifestyle-card-photo { height: 120px; }
   .lifestyle-card-photo svg { width: 56px; height: 56px; }
 
@@ -1576,19 +1644,34 @@ ul { list-style: none; }
       <h2>先輩シッターの声</h2>
     </div>
 
-    <div class="review-card" style="max-width:700px; margin: 0 auto 30px; padding:30px;">
-      <p class="review-author" style="margin-bottom:10px; color:#e24a66; font-weight:700; font-size:16px;">元保育士（25歳・時給1,600円）</p>
-      <p class="review-text">保育園で4年間勤務した後にベビーシッターに転職しました。一対一で子どもと向き合えるやりがいがあり、給与も向上。働き方の自由度が高く、自分のペースで仕事ができています。</p>
+    <div class="voice-card-group">
+      <div class="voice-face">
+        <img src="face_circular_crop.png" alt="元保育士シッター">
+      </div>
+      <div class="review-card">
+        <p class="review-author">元保育士（25歳・時給1,600円）</p>
+        <p class="review-text">保育園で4年間勤務した後にベビーシッターに転職しました。一対一で子どもと向き合えるやりがいがあり、給与も向上。働き方の自由度が高く、自分のペースで仕事ができています。</p>
+      </div>
     </div>
 
-    <div class="review-card" style="max-width:700px; margin: 0 auto 30px; padding:30px;">
-      <p class="review-author" style="margin-bottom:10px; color:#e24a66; font-weight:700; font-size:16px;">大学生（21歳・時給1,800円）</p>
-      <p class="review-text">保育系大学の3年生です。ベビーシッターの仕事を通じて実践的な学びが得られ、就職相談やマナーの習得にも役立っています。学業との両立も無理なくできます。</p>
+    <div class="voice-card-group">
+      <div class="voice-face">
+        <img src="face_circular_crop_new.png" alt="大学生シッター">
+      </div>
+      <div class="review-card">
+        <p class="review-author">大学生（21歳・時給1,800円）</p>
+        <p class="review-text">保育系大学の3年生です。ベビーシッターの仕事を通じて実践的な学びが得られ、就職相談やマナーの習得にも役立っています。学業との両立も無理なくできます。</p>
+      </div>
     </div>
 
-    <div class="review-card" style="max-width:700px; margin: 0 auto 30px; padding:30px;">
-      <p class="review-author" style="margin-bottom:10px; color:#e24a66; font-weight:700; font-size:16px;">元看護師（30歳・時給1,500円）</p>
-      <p class="review-text">病児・病後児保育を専門に活動しています。看護師時代の医療知識を活かせる場があり、社会貢献を実感できる充実した日々を送っています。</p>
+    <div class="voice-card-group">
+      <div class="voice-face">
+        <img src="face_circular_crop_3.png" alt="元看護師シッター">
+      </div>
+      <div class="review-card">
+        <p class="review-author">元看護師（30歳・時給1,500円）</p>
+        <p class="review-text">病児・病後児保育を専門に活動しています。看護師時代の医療知識を活かせる場があり、社会貢献を実感できる充実した日々を送っています。</p>
+      </div>
     </div>
 
     <!-- CTA -->
