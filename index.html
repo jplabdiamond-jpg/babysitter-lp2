@@ -1630,18 +1630,18 @@ ul { list-style: none; }
 }
 
 .anim-ready { opacity: 0; }
-.anim-scale { animation: scaleUp 0.7s ease-out forwards; }
-.anim-bounce-left { animation: bounceFromLeft 2s ease-out forwards; }
-.anim-bounce-right { animation: bounceFromRight 2s ease-out forwards; }
-.anim-left { animation: slideFromLeft 0.65s ease-out forwards; }
-.anim-right { animation: slideFromRight 0.65s ease-out forwards; }
-.anim-up { animation: fadeSlideUp 0.65s ease-out forwards; }
+.anim-scale { animation: scaleUp 0.7s ease-out 0.5s forwards; }
+.anim-bounce-left { animation: bounceFromLeft 2s ease-out 0.5s forwards; }
+.anim-bounce-right { animation: bounceFromRight 2s ease-out 0.5s forwards; }
+.anim-left { animation: slideFromLeft 0.65s ease-out 0.5s forwards; }
+.anim-right { animation: slideFromRight 0.65s ease-out 0.5s forwards; }
+.anim-up { animation: fadeSlideUp 0.65s ease-out 0.5s forwards; }
 .anim-pulse { animation: pulseBtn 2s ease-in-out infinite; }
 
-.anim-delay-1 { animation-delay: 0.1s; }
-.anim-delay-2 { animation-delay: 0.2s; }
-.anim-delay-3 { animation-delay: 0.3s; }
-.anim-delay-4 { animation-delay: 0.4s; }
+.anim-delay-1 { animation-delay: 0.6s; }
+.anim-delay-2 { animation-delay: 0.7s; }
+.anim-delay-3 { animation-delay: 0.8s; }
+.anim-delay-4 { animation-delay: 0.9s; }
 
 /* Mobile: elements always visible, animations are cosmetic only */
 @media (max-width: 768px) {
@@ -1702,12 +1702,12 @@ ul { list-style: none; }
 }
 .highlight-pen.anim-highlight {
   animation: highlighterDraw 0.8s ease-out forwards;
-  animation-delay: 0.3s;
+  animation-delay: 0.8s;
 }
 
 /* Section nav cards: 1s slide from edges */
-.anim-nav-left { animation: slideFromLeft 1s ease-out forwards; }
-.anim-nav-right { animation: slideFromRight 1s ease-out forwards; }
+.anim-nav-left { animation: slideFromLeft 1s ease-out 0.5s forwards; }
+.anim-nav-right { animation: slideFromRight 1s ease-out 0.5s forwards; }
 
 /* Mascot pop: 120% → 100% */
 @keyframes mascotPopLeft {
@@ -1727,10 +1727,10 @@ ul { list-style: none; }
   opacity: 0;
 }
 .heading-mascot-left.anim-bounce-left {
-  animation: bounceFromLeft 2s ease-out forwards;
+  animation: bounceFromLeft 2s ease-out 0.5s forwards;
 }
 .heading-mascot-right.anim-bounce-right {
-  animation: bounceFromRight 2s ease-out forwards;
+  animation: bounceFromRight 2s ease-out 0.5s forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2544,7 +2544,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       entries.forEach(function(e) {
         if (!e.isIntersecting) return;
         liObs.unobserve(e.target);
-        e.target.style.animationDelay = (i * 0.12) + 's';
+        e.target.style.animationDelay = (0.5 + i * 0.12) + 's';
         e.target.classList.add('anim-lead-up');
       });
     }, { threshold: 0.05 });
