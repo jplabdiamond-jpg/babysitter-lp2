@@ -1599,10 +1599,21 @@ ul { list-style: none; }
   to { opacity: 1; transform: translateX(0); }
 }
 @keyframes bounceFromLeft {
-  0% { opacity: 0; transform: translateX(-120px); }
-  50% { opacity: 1; transform: translateX(15px); }
+  0% { opacity: 0; transform: translateX(-200px); }
+  40% { opacity: 1; transform: translateX(20px); }
+  55% { transform: translateX(-12px); }
+  70% { transform: translateX(8px); }
+  82% { transform: translateX(-4px); }
+  92% { transform: translateX(2px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes bounceFromRight {
+  0% { opacity: 0; transform: translateX(200px); }
+  40% { opacity: 1; transform: translateX(-20px); }
+  55% { transform: translateX(12px); }
   70% { transform: translateX(-8px); }
-  85% { transform: translateX(4px); }
+  82% { transform: translateX(4px); }
+  92% { transform: translateX(-2px); }
   100% { opacity: 1; transform: translateX(0); }
 }
 @keyframes slideFromRight {
@@ -1620,7 +1631,8 @@ ul { list-style: none; }
 
 .anim-ready { opacity: 0; }
 .anim-scale { animation: scaleUp 0.7s ease-out forwards; }
-.anim-bounce-left { animation: bounceFromLeft 0.9s ease-out forwards; }
+.anim-bounce-left { animation: bounceFromLeft 2s ease-out forwards; }
+.anim-bounce-right { animation: bounceFromRight 2s ease-out forwards; }
 .anim-left { animation: slideFromLeft 0.65s ease-out forwards; }
 .anim-right { animation: slideFromRight 0.65s ease-out forwards; }
 .anim-up { animation: fadeSlideUp 0.65s ease-out forwards; }
@@ -1709,15 +1721,21 @@ ul { list-style: none; }
   100% { transform: scale(1) rotate(5deg); }
 }
 .heading-mascot-left {
-  animation: mascotPopLeft 1s ease-in-out 1s both;
+  opacity: 0;
 }
 .heading-mascot-right {
-  animation: mascotPopRight 1s ease-in-out 1s both;
+  opacity: 0;
+}
+.heading-mascot-left.anim-bounce-left {
+  animation: bounceFromLeft 2s ease-out forwards;
+}
+.heading-mascot-right.anim-bounce-right {
+  animation: bounceFromRight 2s ease-out forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .anim-ready { opacity: 1; }
-  .anim-scale, .anim-bounce-left, .anim-left, .anim-right, .anim-up { animation: none; opacity: 1; transform: none; }
+  .anim-scale, .anim-bounce-left, .anim-bounce-right, .anim-left, .anim-right, .anim-up { animation: none; opacity: 1; transform: none; }
   .anim-pulse { animation: none; }
   .highlight-pen { background-size: 100% 40%; }
   .highlight-pen.anim-highlight { animation: none; }
@@ -2358,6 +2376,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   );
   standaloneImgs.forEach(el => el.classList.add('anim-ready'));
 
+  // Mascots: bounce from sides (opacity:0 set in CSS, no anim-ready needed)
+  document.querySelectorAll('.heading-mascot-left, .heading-mascot-right').forEach(el => {
+    el.dataset.animType = 'mascot';
+  });
+
   // CTA buttons: pulse (always visible, no anim-ready/opacity:0)
   document.querySelectorAll('.cta-btn').forEach(el => el.classList.add('anim-pulse'));
 
@@ -2402,7 +2425,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       const el = entry.target;
       observer.unobserve(el);
 
-      // Standalone images: scale up
+      // Mascots: bounce from left/right
+      if (el.dataset.animType === 'mascot') {
+        if (el.classList.contains('heading-mascot-left')) el.classList.add('anim-bounce-left');
+        if (el.classList.contains('heading-mascot-right')) el.classList.add('anim-bounce-right');
+        return;
+      }
+
+      // Standalone images: scale up / bounce
       if (el.matches('.lead-section > img')) {
         el.classList.add('anim-bounce-left');
         return;
@@ -2449,10 +2479,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 
   document.querySelectorAll('.anim-ready').forEach(el => observer.observe(el));
+  document.querySelectorAll('.heading-mascot-left, .heading-mascot-right').forEach(el => observer.observe(el));
 
   // Safety fallback: if any element is still hidden after 3s, force show
   setTimeout(function() {
-    document.querySelectorAll('.anim-ready').forEach(function(el) {
+    document.querySelectorAll('.anim-ready, .heading-mascot-left, .heading-mascot-right').forEach(function(el) {
       if (getComputedStyle(el).opacity === '0') {
         el.style.opacity = '1';
         el.style.transform = 'none';
