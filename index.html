@@ -2373,9 +2373,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 (function(){
   // Images (standalone, not inside cards): scale up
   const standaloneImgs = document.querySelectorAll(
-    '.lead-section > img, .section-heading img'
+    '.section-heading img'
   );
   standaloneImgs.forEach(el => el.classList.add('anim-ready'));
+
+  // Lead-section image: hidden initially, triggered by custom scroll logic below
+  const leadImg = document.querySelector('.lead-section > img');
+  if (leadImg) leadImg.classList.add('anim-ready');
 
   // Mascots: bounce from sides (opacity:0 set in CSS, no anim-ready needed)
   document.querySelectorAll('.heading-mascot-left, .heading-mascot-right').forEach(el => {
@@ -2433,11 +2437,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         return;
       }
 
-      // Standalone images: scale up / bounce
-      if (el.matches('.lead-section > img')) {
-        el.classList.add('anim-bounce-left');
-        return;
-      }
+      // Standalone images: scale up
       if (el.matches('.section-heading img')) {
         el.classList.add('anim-scale');
         return;
@@ -2483,14 +2483,60 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   document.querySelectorAll('.heading-mascot-left, .heading-mascot-right').forEach(el => observer.observe(el));
 
   // Safety fallback: if any element is still hidden after 3s, force show
+  // (exclude lead-section > img which has its own scroll-based trigger)
   setTimeout(function() {
     document.querySelectorAll('.anim-ready, .heading-mascot-left, .heading-mascot-right').forEach(function(el) {
+      if (el.matches('.lead-section > img')) return;
       if (getComputedStyle(el).opacity === '0') {
         el.style.opacity = '1';
         el.style.transform = 'none';
       }
     });
   }, 3000);
+
+  // Lead-section image: custom scroll-based trigger
+  // Desktop: animate after hero CTA button scrolls out of view
+  // Mobile: animate after "モデル収入をチェック" card scrolls past
+  (function() {
+    var leadImg = document.querySelector('.lead-section > img');
+    if (!leadImg) return;
+    var triggered = false;
+
+    function triggerLeadAnim() {
+      if (triggered) return;
+      triggered = true;
+      leadImg.classList.add('anim-bounce-left');
+    }
+
+    // Pick the trigger element based on viewport width
+    function getTriggerEl() {
+      if (window.innerWidth <= 768) {
+        // Mobile: the "モデル収入をチェック" nav item (2nd .section-nav-item)
+        var navItems = document.querySelectorAll('.section-nav-grid > .section-nav-item');
+        return navItems[1] || null; // 2nd item = モデル収入をチェック
+      } else {
+        // Desktop: the hero CTA button area
+        return document.querySelector('.recruit-cta-wrapper .cta-wrap');
+      }
+    }
+
+    var triggerEl = getTriggerEl();
+    if (!triggerEl) return;
+
+    // Use IntersectionObserver to detect when the trigger element leaves the viewport
+    var trigObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        // When trigger element was visible and now scrolled out (not intersecting)
+        // We also check boundingClientRect.top < 0 to ensure it scrolled UP (past), not just not visible yet
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+          triggerLeadAnim();
+          trigObs.disconnect();
+        }
+      });
+    }, { threshold: 0 });
+
+    trigObs.observe(triggerEl);
+  })();
 
   // Lead list items: scale up with stagger
   document.querySelectorAll('.lead-list li').forEach(function(li, i) {
