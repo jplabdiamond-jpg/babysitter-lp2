@@ -1629,22 +1629,50 @@ ul { list-style: none; }
   50% { transform: scale(1.04); }
 }
 
+/* Elements that will animate: hidden by CSS from the start (no FOUC flash) */
+.section-heading img,
+.lead-section > img,
+.lifestyle-cards > .lifestyle-card,
+.sitting-info-cards > .sitting-info-card,
+.safety-grid > .safety-card,
+.flow-steps > .flow-step,
+.section-nav-grid > .section-nav-item,
+.section-nav-full .section-nav-item,
+.merit-card,
+.voice-card-group,
+.faq-item,
+.req-box {
+  opacity: 0;
+  will-change: opacity, transform;
+}
 .anim-ready { opacity: 0; }
-.anim-scale { animation: scaleUp 0.7s ease-out 0.5s forwards; }
-.anim-bounce-left { animation: bounceFromLeft 2s ease-out 0.5s forwards; }
-.anim-bounce-right { animation: bounceFromRight 2s ease-out 0.5s forwards; }
-.anim-left { animation: slideFromLeft 0.65s ease-out 0.5s forwards; }
-.anim-right { animation: slideFromRight 0.65s ease-out 0.5s forwards; }
-.anim-up { animation: fadeSlideUp 0.65s ease-out 0.5s forwards; }
+.anim-scale { animation: scaleUp 0.7s ease-out 0.15s forwards; }
+.anim-bounce-left { animation: bounceFromLeft 2s ease-out 0.15s forwards; }
+.anim-bounce-right { animation: bounceFromRight 2s ease-out 0.15s forwards; }
+.anim-left { animation: slideFromLeft 0.65s ease-out 0.15s forwards; }
+.anim-right { animation: slideFromRight 0.65s ease-out 0.15s forwards; }
+.anim-up { animation: fadeSlideUp 0.65s ease-out 0.15s forwards; }
 .anim-pulse { animation: pulseBtn 2s ease-in-out infinite; }
 
-.anim-delay-1 { animation-delay: 0.6s; }
-.anim-delay-2 { animation-delay: 0.7s; }
-.anim-delay-3 { animation-delay: 0.8s; }
-.anim-delay-4 { animation-delay: 0.9s; }
+.anim-delay-1 { animation-delay: 0.25s; }
+.anim-delay-2 { animation-delay: 0.35s; }
+.anim-delay-3 { animation-delay: 0.45s; }
+.anim-delay-4 { animation-delay: 0.55s; }
 
 /* Mobile: elements always visible, animations are cosmetic only */
 @media (max-width: 768px) {
+  .section-heading img,
+  .lead-section > img,
+  .lifestyle-cards > .lifestyle-card,
+  .sitting-info-cards > .sitting-info-card,
+  .safety-grid > .safety-card,
+  .flow-steps > .flow-step,
+  .section-nav-grid > .section-nav-item,
+  .section-nav-full .section-nav-item,
+  .merit-card,
+  .voice-card-group,
+  .faq-item,
+  .req-box { opacity: 1; will-change: auto; }
   .anim-ready { opacity: 1 !important; }
   .lead-list li { opacity: 1 !important; transform: none !important; }
   .lead-list li.anim-lead-up { animation: none; }
@@ -1734,6 +1762,18 @@ ul { list-style: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .section-heading img,
+  .lead-section > img,
+  .lifestyle-cards > .lifestyle-card,
+  .sitting-info-cards > .sitting-info-card,
+  .safety-grid > .safety-card,
+  .flow-steps > .flow-step,
+  .section-nav-grid > .section-nav-item,
+  .section-nav-full .section-nav-item,
+  .merit-card,
+  .voice-card-group,
+  .faq-item,
+  .req-box { opacity: 1; will-change: auto; }
   .anim-ready { opacity: 1; }
   .anim-scale, .anim-bounce-left, .anim-bounce-right, .anim-left, .anim-right, .anim-up { animation: none; opacity: 1; transform: none; }
   .anim-pulse { animation: none; }
@@ -2369,25 +2409,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // ===== SCROLL ANIMATIONS =====
 (function(){
-  // Images (standalone, not inside cards): scale up
-  const standaloneImgs = document.querySelectorAll(
-    '.section-heading img'
-  );
-  standaloneImgs.forEach(el => el.classList.add('anim-ready'));
+  // Images (standalone, not inside cards): scale up — CSS hides from first paint
+  const standaloneImgs = document.querySelectorAll('.section-heading img');
 
-  // Lead-section image: hidden initially, triggered by custom scroll logic below
-  const leadImg = document.querySelector('.lead-section > img');
-  if (leadImg) leadImg.classList.add('anim-ready');
+  // Lead-section image: hidden by CSS, triggered by custom scroll logic below
 
-  // Mascots: bounce from sides (opacity:0 set in CSS, no anim-ready needed)
+  // Mascots: bounce from sides (opacity:0 set in CSS)
   document.querySelectorAll('.heading-mascot-left, .heading-mascot-right').forEach(el => {
     el.dataset.animType = 'mascot';
   });
 
-  // CTA buttons: pulse (always visible, no anim-ready/opacity:0)
+  // CTA buttons: pulse (always visible)
   document.querySelectorAll('.cta-btn').forEach(el => el.classList.add('anim-pulse'));
 
-  // Cards in 2-column grids: left/right slide (NOT section-nav-grid, handled separately)
+  // Cards in multi-column grids: left/right slide
   const gridCards = [
     { sel: '.lifestyle-cards > .lifestyle-card', cols: 2 },
     { sel: '.sitting-info-cards > .sitting-info-card', cols: 4 },
@@ -2396,7 +2431,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   ];
   gridCards.forEach(g => {
     document.querySelectorAll(g.sel).forEach((el, i) => {
-      el.classList.add('anim-ready');
       el.dataset.animIdx = i;
       el.dataset.animCols = g.cols;
     });
@@ -2405,7 +2439,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   // Section nav grid: specific directions (0=left, 1=right, 2=left, 3=right)
   const navDirs = ['left','right','left','right'];
   document.querySelectorAll('.section-nav-grid > .section-nav-item').forEach((el, i) => {
-    el.classList.add('anim-ready');
     el.dataset.animType = 'nav';
     el.dataset.animNavDir = navDirs[i] || 'left';
     el.dataset.animIdx = i;
@@ -2416,7 +2449,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     '.merit-card, .voice-card-group, .faq-item, .req-box, .section-nav-full .section-nav-item'
   );
   singleCards.forEach((el, i) => {
-    el.classList.add('anim-ready');
     el.dataset.animType = 'up';
   });
 
@@ -2477,13 +2509,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
   }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 
-  document.querySelectorAll('.anim-ready').forEach(el => observer.observe(el));
+  // Observe all CSS-hidden animated elements
+  var animSel = '.section-heading img, .lead-section > img, .lifestyle-cards > .lifestyle-card, .sitting-info-cards > .sitting-info-card, .safety-grid > .safety-card, .flow-steps > .flow-step, .section-nav-grid > .section-nav-item, .section-nav-full .section-nav-item, .merit-card, .voice-card-group, .faq-item, .req-box';
+  document.querySelectorAll(animSel).forEach(el => observer.observe(el));
   document.querySelectorAll('.heading-mascot-left, .heading-mascot-right').forEach(el => observer.observe(el));
 
   // Safety fallback: if any element is still hidden after 3s, force show
   // (exclude lead-section > img which has its own scroll-based trigger)
   setTimeout(function() {
-    document.querySelectorAll('.anim-ready, .heading-mascot-left, .heading-mascot-right').forEach(function(el) {
+    document.querySelectorAll(animSel + ', .heading-mascot-left, .heading-mascot-right').forEach(function(el) {
       if (el.matches('.lead-section > img')) return;
       if (getComputedStyle(el).opacity === '0') {
         el.style.opacity = '1';
